@@ -22,7 +22,7 @@ export default function Education() {
                     </h1>
                 </div>
             </div>
-            <div className='flex justify-between mx-auto pl-10 pr-10 m-20'>
+            <div className='flex justify-center mx-auto pl-10 pr-10 m-20 sm:text-center'>
                 <div className='text-center' data-aos="zoom-out">
                     <img className='scale-75 h-20' src={acme} alt='Grepsr'/>
                     <span className='block font-bold text-gray-900'>Computer Engineering</span>

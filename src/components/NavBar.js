@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import homeIcon from '.././images/home-icon.png'
 import { AiFillHome, AiOutlineMenu } from 'react-icons/ai'
-export default function NavBar() {
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
+export default function NavBar(props) {
   return (
-    <nav className='bg-white shadow-lg'>
+    <nav className='shadow-lg'>
         <div className='max-w-6xl mx-auto px-4'>
             <div className='flex justify-between'>
                 <div className='flex space-x-7'>
@@ -14,10 +15,21 @@ export default function NavBar() {
                         </a>
                     </div>
                 </div>
-                    <div className='items-right flex space-x-1'>
-                        <a className='flex px-2 py-4' href='#'>
-                            <AiOutlineMenu className='h-10 w-10' />
-                        </a>
+                    <div className='items-right flex'>
+                        <div className='inline'>
+                            <a className='flex px-2 py-4' href='#'>
+                                <AiOutlineMenu className='h-10 w-10' />
+                            </a>
+                        </div>
+                        <div className='inline mx-auto mt-7 px-5'>
+                            <button
+                                type='button'
+                                onClick={props.themeSwitch}
+                                className='scale-150'
+                                >
+                                {props.themes ==='dark'?<MdLightMode/>:<MdDarkMode/>}
+                            </button>
+                        </div>
                     </div>
             </div>
         </div>

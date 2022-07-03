@@ -1,4 +1,4 @@
-// import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Card from './components/Cards';
 import NavBar from './components/NavBar';
@@ -6,12 +6,36 @@ import Skills from './components/Skills';
 import ContactMe from './components/ContactMe';
 import Experience from './components/Experience';
 import Education from './components/Education';
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
 function App() {
+  const[theme, setTheme] = useState(null);
+
+  useEffect(() => {
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+      setTheme('light');
+    }else{
+      setTheme('dark');
+    }
+  }, []);
+
+  useEffect(() => {
+    if(theme === 'dark'){
+      document.documentElement.classList.add('dark');
+    }else{
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === 'light' ? 'dark':'light');
+    console.log(theme);
+  }
+
   return (
-    <div>
-      <div>
-        <NavBar />
+    <div className='bg-white dark:bg-black dark:text-white'>   
+      <div className=''>
+        <NavBar themeSwitch={handleThemeSwitch} themes={theme}/>
       </div>
       <div className=''>
         <Card />
