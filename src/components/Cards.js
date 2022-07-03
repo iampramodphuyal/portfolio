@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import profile from '.././images/profile.jpeg';
 import resume from '.././images/resume.pdf';
 import { AiOutlineCloudDownload } from 'react-icons/ai'
 
 function Card(){
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, []);
     return(
         <div className='w-full'>
             <div className='bg-gray-100'>
                 <div className='flex pt-8 py-2 justify-center'>
-                    <div className='w-1/5'>
+                    <div className='w-1/5' data-aos="zoom-out-up">
                         <img className='rounded-full drop-shadow-xl mx-auto' src={profile} alt='Profile Picture' />
                     </div>
                 </div>

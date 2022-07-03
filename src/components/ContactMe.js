@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
 import { SiGmail } from 'react-icons/si'
 
 export default function ContactMe() {
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, []);
   return (
     <div className='w-full'>
         <div className=''>
@@ -14,7 +20,7 @@ export default function ContactMe() {
                     </h1>
                 </div>
             </div>
-            <div className='flex justify-between pl-10 pr-10 mx-auto m-20'>
+            <div className='flex justify-between pl-10 pr-10 mx-auto m-20' data-aos="zoom-in-up">
                 <div className=''>
                     <a href='https://www.instagram.com/iampramodphuyal'>
                         <AiFillInstagram className='mx-auto w-10 h-10 block'/>
