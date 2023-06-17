@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/iampramodphuyal.github.io/static/css/main.25bd4f25.css",
-    "main.js": "/iampramodphuyal.github.io/static/js/main.c11a3990.js",
+    "main.css": "/iampramodphuyal.github.io/static/css/main.127bfafa.css",
+    "main.js": "/iampramodphuyal.github.io/static/js/main.1fc82a38.js",
     "static/media/profile.jpeg": "/iampramodphuyal.github.io/static/media/profile.61996a75c9cc731f94ce.jpeg",
     "static/media/prerana.jpg": "/iampramodphuyal.github.io/static/media/prerana.952af9fb461b4cfed086.jpg",
     "static/media/codetantra.png": "/iampramodphuyal.github.io/static/media/codetantra.ba0e438f36fc24e0bd24.png",
@@ -10,11 +10,11 @@
     "static/media/acme.png": "/iampramodphuyal.github.io/static/media/acme.a3b0de57ce2b52ab1b09.png",
     "static/media/xelwel.png": "/iampramodphuyal.github.io/static/media/xelwel.e974e8f9b222c7647b49.png",
     "index.html": "/iampramodphuyal.github.io/index.html",
-    "main.25bd4f25.css.map": "/iampramodphuyal.github.io/static/css/main.25bd4f25.css.map",
-    "main.c11a3990.js.map": "/iampramodphuyal.github.io/static/js/main.c11a3990.js.map"
+    "main.127bfafa.css.map": "/iampramodphuyal.github.io/static/css/main.127bfafa.css.map",
+    "main.1fc82a38.js.map": "/iampramodphuyal.github.io/static/js/main.1fc82a38.js.map"
   },
   "entrypoints": [
-    "static/css/main.25bd4f25.css",
-    "static/js/main.c11a3990.js"
+    "static/css/main.127bfafa.css",
+    "static/js/main.1fc82a38.js"
   ]
 }
