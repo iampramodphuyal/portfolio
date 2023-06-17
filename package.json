@@ -1,7 +1,7 @@
 {
   "name": "iampramodphuyal.github.io",
-  "version": "0.1.2",
-  "private": false,
+  "version": "0.1.4",
+  "private": true,
   "homepage": "https://iampramodphuyal.github.io/iampramodphuyal.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -16,9 +16,9 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
