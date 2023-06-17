@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/iampramodphuyal.github.io/static/css/main.25bd4f25.css",
+    "main.js": "/iampramodphuyal.github.io/static/js/main.e0db4761.js",
+    "static/media/profile.jpeg": "/iampramodphuyal.github.io/static/media/profile.61996a75c9cc731f94ce.jpeg",
+    "static/media/prerana.jpg": "/iampramodphuyal.github.io/static/media/prerana.952af9fb461b4cfed086.jpg",
+    "static/media/codetantra.png": "/iampramodphuyal.github.io/static/media/codetantra.ba0e438f36fc24e0bd24.png",
+    "static/media/resume.pdf": "/iampramodphuyal.github.io/static/media/resume.5322bcc111c0a5f062a2.pdf",
+    "static/media/home-icon.png": "/iampramodphuyal.github.io/static/media/home-icon.6d395c23ac73f6c53671.png",
+    "static/media/acme.png": "/iampramodphuyal.github.io/static/media/acme.a3b0de57ce2b52ab1b09.png",
+    "static/media/xelwel.png": "/iampramodphuyal.github.io/static/media/xelwel.e974e8f9b222c7647b49.png",
+    "index.html": "/iampramodphuyal.github.io/index.html",
+    "main.25bd4f25.css.map": "/iampramodphuyal.github.io/static/css/main.25bd4f25.css.map",
+    "main.e0db4761.js.map": "/iampramodphuyal.github.io/static/js/main.e0db4761.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25bd4f25.css",
+    "static/js/main.e0db4761.js"
+  ]
+}
