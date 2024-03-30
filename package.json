@@ -2,7 +2,7 @@
   "name": "iampramodphuyal.github.io",
   "version": "0.1.4",
   "private": true,
-  "homepage": "https://iampramodphuyal.github.io/iampramodphuyal.github.io",
+  "homepage": "https://iampramodphuyal.github.io/portfolio",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
