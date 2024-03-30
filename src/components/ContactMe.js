@@ -20,7 +20,7 @@ export default function ContactMe() {
                     </h1>
                 </div>
             </div>
-            <div className='flex mx-auto m-20 overflow-auto' data-aos="zoom-in-up">
+            <div className='flex mx-auto m-20 overflow-auto justify-center' data-aos="zoom-in-up">
                 <div className='m-10  mx-auto text-center'>
                     <a href='https://www.instagram.com/iampramodphuyal' className=''>
                         <AiFillInstagram className='mx-auto w-10 h-10 block'/>
@@ -34,7 +34,7 @@ export default function ContactMe() {
                     </a>
                 </div>
                 <div className='m-10  mx-auto text-center'>
-                    <a href='https://mail.google.com/mail/?view=cm&fs=1&to=pramod.phuyal@grepsr.com' className=''>
+                    <a href='https://mail.google.com/mail/?view=cm&fs=1&to=iampramodvii@grepsr.com' className=''>
                         <SiGmail className='mx-auto w-10 h-10 block'/>
                         <span className='block text-xl'>Pramod Phuyal</span>
                     </a>
