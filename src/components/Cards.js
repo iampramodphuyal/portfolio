@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import profile from '.././images/profile.png';
-import resume from '.././images/resume.pdf';
-import { AiOutlineCloudDownload } from 'react-icons/ai';
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import profile from ".././images/profile.png";
+import { AiOutlineCloudDownload } from "react-icons/ai";
 
 function Card() {
     useEffect(() => {
@@ -55,7 +54,6 @@ function Card() {
                 </div>
             </div>
             <div className="mt-10 mx-auto text-center w-1/6 sm:w-auto">
-                {/*<a href={resume} className=""> */}
                 <a
                     href="https://drive.google.com/file/d/1tRvxj4DRNDje1vEsuFhPuPnVRtJq8vFl/view?usp=sharing"
                     className="hover:border-green-400"
@@ -71,4 +69,3 @@ function Card() {
 }
 
 export default Card;
-

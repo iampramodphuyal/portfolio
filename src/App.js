@@ -1,43 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import Card from './components/Cards';
-import NavBar from './components/NavBar';
-import Skills from './components/Skills';
-import ContactMe from './components/ContactMe';
-import Experience from './components/Experience';
-import Education from './components/Education';
-import { MdDarkMode, MdLightMode } from 'react-icons/md';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Card from "./components/Cards";
+import NavBar from "./components/NavBar";
+import Skills from "./components/Skills";
+import ContactMe from "./components/ContactMe";
+import Experience from "./components/Experience";
+import Education from "./components/Education";
 
 function App() {
-    const [theme, setTheme] = useState(null);
-
+    const savedTheme = localStorage.getItem("theme") || "light";
+    const [theme, setTheme] = useState(savedTheme);
     useEffect(() => {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            setTheme('light');
-        } else {
-            setTheme('dark');
-        }
-    }, []);
-
+        setTheme(savedTheme);
+        document.documentElement.classList.add(savedTheme);
+    }, [savedTheme]);
     useEffect(() => {
-        if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
+        localStorage.setItem("theme", theme);
+        document.documentElement.classList.remove(
+            theme === "dark" ? "light" : "dark",
+        );
+        document.documentElement.classList.add(theme);
     }, [theme]);
-
     const handleThemeSwitch = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light');
+        setTheme(theme === "light" ? "dark" : "light");
         console.log(theme);
     };
-
     return (
         <div className="bg-white dark:bg-black dark:text-gray-400">
-            <div className="">
+            <div className="navigationBar">
                 <NavBar themeSwitch={handleThemeSwitch} themes={theme} />
             </div>
-            <div className="">
+            <div className="pt-20">
                 <Card />
             </div>
             <div className="mt-20">
