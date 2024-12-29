@@ -11,7 +11,7 @@ function Card() {
     }, []);
     return (
         <div className="w-full">
-            <div className="sm:text-center bg-white dark:bg-black">
+            <div className="sm:text-center bg-white dark:bg-customDark">
                 <div className="flex pt-4 sm:py-1 py-2 justify-center">
                     <div
                         className="sm:w-1/3 w-1/5 md:w-1/3 w-1/2"

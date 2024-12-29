@@ -8,18 +8,18 @@ export default function NavBar(props) {
                 <div className="flex justify-between">
                     <div className="flex space-x-7">
                         <div className="">
-                            <a className="flex items-center px-2 py-4" href="#">
-                                <AiFillHome className="h-10 w-10" />
+                            <a className="flex items-center px-2 py-3" href="#">
+                                <AiFillHome className="h-8 w-8" />
                             </a>
                         </div>
                     </div>
                     <div className="items-right flex">
-                        <div className="inline">
-                            <a className="flex px-2 py-4" href="#">
-                                <AiOutlineMenu className="h-10 w-10" />
+                        <div className="inline mx-auto mt-4 px-5">
+                            <a className="flex" href="#">
+                                <AiOutlineMenu className="h-8 w-8" />
                             </a>
                         </div>
-                        <div className="inline mx-auto mt-7 px-5">
+                        <div className="inline mx-auto mt-5 px-5">
                             <button
                                 type="button"
                                 onClick={props.themeSwitch}
