@@ -1,15 +1,19 @@
 .mainBody {
     width: 100%;
     height: auto;
+    margin: 0;
     top: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow: hidden;
+    scroll-behaviour: smooth;
+    overscroll-behavior: none;
 }
 
 .navigationBar {
     top: 0;
-    /*left: 0;*/
+    left: 0;
     position: fixed;
+    /*position: sticky;*/
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);

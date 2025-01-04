@@ -26,7 +26,7 @@ function App() {
         console.log(theme);
     };
     return (
-        <div className="bg-white dark:bg-customDark dark:text-gray-400 mainBody">
+        <div className="bg-customLight dark:bg-customDark dark:text-gray-400 mainBody">
             <div className="navigationBar">
                 <NavBar themeSwitch={handleThemeSwitch} themes={theme} />
             </div>

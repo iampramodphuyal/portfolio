@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaPhp, FaLaravel, FaReact, FaPython } from "react-icons/fa";
-import { SiTypescript } from "react-icons/si";
+import { SiTypescript, SiFastapi } from "react-icons/si";
 import { DiDjango } from "react-icons/di";
 import { SiMysql } from "react-icons/si";
 
@@ -28,6 +28,12 @@ export default function Skills() {
                         <SiTypescript className="mx-auto w-20 h-20 hover:text-blue-800" />
                         <p className="mx-auto text-l sm:text-3xl font-semibold">
                             TypeScript
+                        </p>
+                    </div>
+                    <div className="flex flex-col w-40 p-10 m-6 hover:text-green-800 overflow-hidden bg-white dark:bg-gray-900 shadow-2xl rounded-xl sm:w-52">
+                        <SiFastapi className="mx-auto w-20 h-20 hover:text-green-800" />
+                        <p className="mx-auto text-l sm:text-3xl font-semibold">
+                            FastAPI
                         </p>
                     </div>
                     <div className="flex flex-col w-40 p-10 m-6 hover:text-purple-900 overflow-hidden bg-white dark:bg-gray-900 shadow-2xl rounded-xl sm:w-52">

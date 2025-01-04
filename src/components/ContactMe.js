@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
-import { SiGmail } from 'react-icons/si';
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { SiGmail } from "react-icons/si";
 
 export default function ContactMe() {
     useEffect(() => {
@@ -25,18 +25,14 @@ export default function ContactMe() {
                     </div>
                 </div>
                 <div
-                    className="flex mx-auto m-5 overflow-auto justify-center"
+                    className="flex mx-auto m-5 overflow-auto justify-center sm:justify sm:text-center"
                     data-aos="zoom-in-up"
                 >
-                    {/* <div className='m-10  mx-auto text-center'>
-                    <a href='https://www.instagram.com/iampramodphuyal' className=''>
-                        <AiFillInstagram className='mx-auto w-10 h-10 block'/>
-                        <span className='block text-xl'>@iampramodphuyal</span>
-                    </a>
-                </div> */}
-                    <div className="m-10  mx-auto text-center">
+                    <div className="m-10 mx-auto text-center">
                         <a
                             href="https://www.linkedin.com/in/pramod-phuyal/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className=""
                         >
                             <AiFillLinkedin className="mx-auto w-10 h-10 block" />
@@ -47,7 +43,9 @@ export default function ContactMe() {
                     </div>
                     <div className="m-10  mx-auto text-center">
                         <a
-                            href="https://mail.google.com/mail/?view=cm&fs=1&to=iampramodvii@grepsr.com"
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=iampramodvii@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className=""
                         >
                             <SiGmail className="mx-auto w-10 h-10 block" />
@@ -57,7 +55,12 @@ export default function ContactMe() {
                         </a>
                     </div>
                     <div className="m-10  mx-auto text-center">
-                        <a href="https://github.com/iamjackvii" className="">
+                        <a
+                            href="https://github.com/iampramodphuyal"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className=""
+                        >
                             <AiFillGithub className="mx-auto w-10 h-10 block" />
                             <span className="block text-xl text-gray-500">
                                 Pramod Phuyal
