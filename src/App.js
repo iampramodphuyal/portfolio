@@ -8,22 +8,18 @@ import Experience from "./components/Experience";
 import Education from "./components/Education";
 
 function App() {
-    const savedTheme = localStorage.getItem("theme") || "light";
-    const [theme, setTheme] = useState(savedTheme);
+    const [theme, setTheme] = useState(
+        () => localStorage.getItem("theme") || "light",
+    );
     useEffect(() => {
-        setTheme(savedTheme);
-        document.documentElement.classList.add(savedTheme);
-    }, [savedTheme]);
-    useEffect(() => {
-        localStorage.setItem("theme", theme);
-        document.documentElement.classList.remove(
-            theme === "dark" ? "light" : "dark",
-        );
+        // Set the theme on the initial load and whenever the theme changes
+        document.documentElement.classList.remove("light", "dark");
         document.documentElement.classList.add(theme);
+        localStorage.setItem("theme", theme);
     }, [theme]);
+
     const handleThemeSwitch = () => {
-        setTheme(theme === "light" ? "dark" : "light");
-        console.log(theme);
+        setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
     };
     return (
         <div className="bg-customLight dark:bg-customDark dark:text-gray-400 mainBody">
