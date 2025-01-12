@@ -1,14 +1,8 @@
 import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
 
 export default function ContactMe() {
-    useEffect(() => {
-        AOS.init();
-        AOS.refresh();
-    }, []);
     return (
         <div className="w-full">
             <div className="">
@@ -24,10 +18,7 @@ export default function ContactMe() {
                         </h1>
                     </div>
                 </div>
-                <div
-                    className="flex mx-auto m-5 overflow-auto justify-center sm:justify sm:text-center"
-                    data-aos="zoom-in-up"
-                >
+                <div className="flex mx-auto m-5 overflow-auto justify-center sm:justify sm:text-center">
                     <div className="m-10 mx-auto text-center">
                         <a
                             href="https://www.linkedin.com/in/pramod-phuyal/"

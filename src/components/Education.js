@@ -1,15 +1,9 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import acme from '.././images/acme.png';
-import codetantra from '.././images/codetantra.png';
-import prerana from '.././images/prerana.jpg';
+import React, { useEffect } from "react";
+import acme from ".././images/acme.png";
+import codetantra from ".././images/codetantra.png";
+import prerana from ".././images/prerana.jpg";
 
 export default function Education() {
-    useEffect(() => {
-        AOS.init();
-        AOS.refresh();
-    }, []);
     return (
         <div className="w-full">
             <div>
@@ -29,7 +23,7 @@ export default function Education() {
                     </div>
                 </div>
                 <div className="flex justify-center mx-auto pl-10 pr-10 m-20 sm:text-center">
-                    <div className="text-center" data-aos="zoom-out">
+                    <div className="text-center">
                         <img
                             className="scale-75 h-20"
                             src={acme}
@@ -42,7 +36,7 @@ export default function Education() {
                             Dec 2016 - Dec 2020
                         </span>
                     </div>
-                    <div className="text-center" data-aos="zoom-out-up">
+                    <div className="text-center">
                         <img
                             className="scale-75 h-20"
                             src={codetantra}
@@ -55,7 +49,7 @@ export default function Education() {
                             Jan 2019 - Mar 2019
                         </span>
                     </div>
-                    <div className="text-center" data-aos="zoom-out-down">
+                    <div className="text-center">
                         <img
                             className="scale-75 h-20"
                             src={prerana}

@@ -1,14 +1,8 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import grepsr from '.././images/grepsr.png';
-import xelwel from '.././images/xelwel.png';
+import React, { useEffect } from "react";
+import grepsr from ".././images/grepsr.png";
+import xelwel from ".././images/xelwel.png";
 
 export default function Experience() {
-    useEffect(() => {
-        AOS.init();
-        AOS.refresh();
-    }, []);
     return (
         <div className="w-full">
             <div>
@@ -23,12 +17,7 @@ export default function Experience() {
                 </div>
                 {/* <div className='flex justify-center mx-auto m-20'> */}
                 <div className="flex justify-center mx-auto m-20">
-                    <div
-                        className="block px-20 mx-auto text-center items-center"
-                        data-aos="fade-right"
-                        data-aos-offset="300"
-                        data-aos-easing="ease-in-sine"
-                    >
+                    <div className="block px-20 mx-auto text-center items-center">
                         <img
                             className="block w-30 h-20 mx-auto"
                             src={grepsr}
@@ -41,12 +30,7 @@ export default function Experience() {
                             May 2022 - Present
                         </span>
                     </div>
-                    <div
-                        className="block px-20 mx-auto text-center items-center"
-                        data-aos="fade-left"
-                        data-aos-offset="300"
-                        data-aos-easing="ease-in-sine"
-                    >
+                    <div className="block px-20 mx-auto text-center items-center">
                         <img
                             className="block w-30 h-20 mx-auto"
                             src={xelwel}

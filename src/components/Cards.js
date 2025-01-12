@@ -1,22 +1,13 @@
 import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import profile from ".././images/profile.png";
 import { AiOutlineCloudDownload } from "react-icons/ai";
 
 function Card() {
-    useEffect(() => {
-        AOS.init();
-        AOS.refresh();
-    }, []);
     return (
         <div className="w-full">
             <div className="sm:text-center bg-customLight dark:bg-customDark">
                 <div className="flex pt-4 sm:py-1 py-2 justify-center">
-                    <div
-                        className="sm:w-1/3 w-1/5 md:w-1/3 w-1/2"
-                        data-aos="zoom-out-up"
-                    >
+                    <div className="sm:w-1/3 w-1/5 md:w-1/3 w-1/2">
                         <img
                             className="rounded-full drop-shadow-xl mx-auto"
                             src={profile}

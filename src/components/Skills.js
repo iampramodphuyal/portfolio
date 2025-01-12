@@ -1,16 +1,10 @@
 import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { FaPhp, FaLaravel, FaReact, FaPython } from "react-icons/fa";
 import { SiTypescript, SiFastapi } from "react-icons/si";
 import { DiDjango } from "react-icons/di";
 import { SiMysql } from "react-icons/si";
 
 export default function Skills() {
-    useEffect(() => {
-        AOS.init();
-        AOS.refresh();
-    }, []);
     return (
         <div className="w-full">
             <div>
