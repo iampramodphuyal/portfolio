@@ -1,7 +1,15 @@
 {
+    "cleanUrls": true,
     "rewrites": [
         {
             "source": "/((?!api).*)",
+            "has": [
+                {
+                    "type": "header",
+                    "key": "user-agent",
+                    "value": ".*curl.*"
+                }
+            ],
             "destination": "/api"
         }
     ]
