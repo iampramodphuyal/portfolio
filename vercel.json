@@ -28,7 +28,7 @@
             "destination": "/app.html"
         },
         {
-            "source": "/(?!.*\\.)(.*)$",
+            "source": "/(.*)",
             "destination": "/app.html"
         }
     ]
