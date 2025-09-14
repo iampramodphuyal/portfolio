@@ -22,6 +22,10 @@
                 }
             ],
             "destination": "/api"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 }
