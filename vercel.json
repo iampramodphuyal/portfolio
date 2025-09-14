@@ -3,33 +3,7 @@
     "rewrites": [
         {
             "source": "/",
-            "has": [
-                {
-                    "type": "header",
-                    "key": "user-agent",
-                    "value": ".*curl.*"
-                }
-            ],
-            "destination": "/api"
-        },
-        {
-            "source": "/(.*)",
-            "has": [
-                {
-                    "type": "header",
-                    "key": "user-agent",
-                    "value": ".*curl.*"
-                }
-            ],
-            "destination": "/api"
-        },
-        {
-            "source": "/",
-            "destination": "/app.html"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/app.html"
+            "destination": "/api/index"
         }
     ]
 }

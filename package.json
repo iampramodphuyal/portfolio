@@ -1,6 +1,6 @@
 {
     "name": "PramodPhuyalPortfolio",
-    "version": "0.2.24",
+    "version": "0.2.25",
     "private": true,
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.4",
@@ -16,7 +16,7 @@
     "scripts": {
         "predeploy": "npm run build",
         "start": "react-scripts --openssl-legacy-provider start",
-        "build": "react-scripts --openssl-legacy-provider build && node -e \"const fs=require('fs'); fs.renameSync('build/index.html', 'build/app.html')\"",
+        "build": "react-scripts --openssl-legacy-provider build",
         "test": "react-scripts --openssl-legacy-provider test",
         "eject": "react-scripts --openssl-legacy-provider eject"
     },
