@@ -1,7 +1,7 @@
 {
     "rewrites": [
         {
-            "source": "/",
+            "source": "/(.*)",
             "has": [{ "type": "header", "key": "user-agent", "value": ".*curl.*" }],
             "destination": "/api"
         }
