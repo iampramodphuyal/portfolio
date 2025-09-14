@@ -24,7 +24,11 @@
             "destination": "/api"
         },
         {
-            "source": "/(.*)",
+            "source": "/",
+            "destination": "/app.html"
+        },
+        {
+            "source": "/(?!.*\\.)(.*)$",
             "destination": "/app.html"
         }
     ]
