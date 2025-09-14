@@ -13,7 +13,7 @@
             "destination": "/api"
         },
         {
-            "source": "/.*",
+            "source": "/(.*)",
             "has": [
                 {
                     "type": "header",
@@ -25,4 +25,3 @@
         }
     ]
 }
-
