@@ -1,10 +1,10 @@
 {
-    "redirects": [
+    "rewrites": [
         {
-            "source": "/:path*",
+            "source": "/((?!api).*)",
             "has": [{ "type": "header", "key": "user-agent", "value": ".*curl.*" }],
-            "destination": "/api",
-            "permanent": false
+            "destination": "/api/"
         }
     ]
 }
+
