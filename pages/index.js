@@ -5,8 +5,8 @@ import Skills from "../components/Skills";
 import ContactMe from "../components/ContactMe";
 import Experience from "../components/Experience";
 import Education from "../components/Education";
-import { execSync } from 'child_process';
-import path from 'path';
+import { execSync } from "child_process";
+import path from "path";
 
 function App() {
     const [theme, setTheme] = useState("light");
@@ -60,7 +60,7 @@ function App() {
 export async function getServerSideProps(context) {
     const ua = context.req.headers["user-agent"] || "";
     if (ua.includes("curl")) {
-        const cardPath = path.join(process.cwd(), 'card.sh');
+        const cardPath = path.join(process.cwd(), "assets/curl/card.sh");
         const output = execSync(`bash ${cardPath}`).toString();
         context.res.setHeader("Content-Type", "text/plain; charset=utf-8");
         context.res.write(output);
@@ -74,4 +74,3 @@ export async function getServerSideProps(context) {
 }
 
 export default App;
-
