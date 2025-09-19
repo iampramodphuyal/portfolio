@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import acme from ".././images/acme.png";
-import codetantra from ".././images/codetantra.png";
-import prerana from ".././images/prerana.jpg";
+import React from "react";
 
 export default function Education() {
+    const acme = "/images/acme.png";
+    const codetantra = "/images/codetantra.png";
+    const prerana = "/images/prerana.jpg";
     return (
         <div className="w-full">
             <div>

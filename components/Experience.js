@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import grepsr from ".././images/grepsr.png";
-import xelwel from ".././images/xelwel.png";
+import React from "react";
 
 export default function Experience() {
+    const grepsr = "/images/grepsr.png";
+    const xelwel = "/images/xelwel.png";
     return (
         <div className="w-full">
             <div>

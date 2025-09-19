@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import profile from ".././images/profile.png";
+import React from "react";
 import { AiOutlineCloudDownload } from "react-icons/ai";
 
 function Card() {
+    const profile = "/images/profile.png";
     return (
         <div className="w-full">
             <div className="sm:text-center bg-customLight dark:bg-customDark">
