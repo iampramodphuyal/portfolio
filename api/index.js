@@ -1,32 +1,20 @@
 export default function handler(req, res) {
-    const userAgent = req.headers["user-agent"] || "";
+    const ua = (req.headers["user-agent"] || "").toLowerCase();
 
-    if (userAgent.includes("curl")) {
-        // Return your API response for curl
-
-        res.setHeader("Content-Type", "text/plain");
+    // Only serve script to curl requests
+    if (ua.includes("curl")) {
+        res.setHeader("Content-Type", "application/x-sh");
         res.status(200).send(`#!/bin/bash
 echo "====================================="
 echo "  Welcome to My CLI Portfolio 🚀"
 echo "====================================="
 echo ""
-echo "Name: Your Name"
+echo "Name: Pramod"
 echo "Role: Software Developer"
-echo "Site: https://your-site.vercel.app"
+echo "Site: https://pramod.vercel.app"
 `);
     } else {
-        // For browsers, serve the React app
-        // Read and serve the built index.html
-        const fs = require("fs");
-        const path = require("path");
-
-        try {
-            const htmlPath = path.join(process.cwd(), "build", "index.html");
-            const html = fs.readFileSync(htmlPath, "utf8");
-            res.setHeader("Content-Type", "text/html");
-            res.send(html);
-        } catch (error) {
-            res.status(404).send("Not found");
-        }
+        // Fallback for browsers
+        res.redirect("/");
     }
 }
