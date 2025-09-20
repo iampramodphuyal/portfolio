@@ -1,16 +1,18 @@
 #!/bin/bash
 
-source assets/curl/config.sh
+# Get the directory where the current script is located
+SCRIPT_DIR=$(dirname "$0")
 
-source assets/curl/contacts.sh
+source "$SCRIPT_DIR/config.sh"
 
-source assets/curl/box.sh 
 
-source assets/curl/about.sh
+source "$SCRIPT_DIR/box.sh" 
+
+source "$SCRIPT_DIR/about.sh"
 
 echo -e "\n"
 # source assets/curl/socials.sh
-source assets/curl/custom-details.sh
+source "$SCRIPT_DIR/custom-details.sh"
 
 
-source assets/curl/footer.sh
+source "$SCRIPT_DIR/footer.sh"

@@ -1,6 +1,8 @@
 #!/bin/bash
 
-source assets/curl/config.sh
+
+SCRIPT_DIR=$(dirname "$0")
+source "$SCRIPT_DIR/config.sh"
 
 
 printf "%s            .--.          %spramod@portfolio\n" "$C_YELLOW" "$C_CYAN"

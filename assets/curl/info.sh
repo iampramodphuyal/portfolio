@@ -1,7 +1,9 @@
 #!/bin/bash
 
-source assets/curl/config.sh
-source assets/curl/box.sh 
+
+SCRIPT_DIR=$(dirname "$0")
+source "$SCRIPT_DIR/config.sh"
+source "$SCRIPT_DIR/box.sh"
 
 
 sourceCode="${C_CYAN}[SOURCE CODE] ${C_GREEN}${S_UNDERLINE}https://github.com/iampramodphuyal/portfolio${C_DEFAULT}"
