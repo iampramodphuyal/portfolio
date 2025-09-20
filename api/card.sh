@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Get the directory where the current script is located
+SCRIPT_DIR="$(dirname "$0")/curl"
+
+source "$SCRIPT_DIR/config.sh"
+
+
+source "$SCRIPT_DIR/box.sh" 
+
+source "$SCRIPT_DIR/about.sh"
+
+echo -e "\n"
+source "$SCRIPT_DIR/custom-details.sh"
+
+
+source "$SCRIPT_DIR/footer.sh"
+
