@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR=$(dirname "$0")
-source "scripts/curl/config.sh"
+source "$SCRIPT_DIR/config.sh"
 
 strip_colors() {
   echo -e "$1" \

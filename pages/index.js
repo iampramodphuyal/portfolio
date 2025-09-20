@@ -65,7 +65,7 @@ export async function getServerSideProps(context) {
         context.res.setHeader("Content-Type", "text/plain; charset=utf-8");
         context.res.write(output);
         context.res.end();
-        return; // Do not return anything after ending the response
+        // return; // Do not return anything after ending the response
     }
 
     return {

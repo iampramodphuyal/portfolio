@@ -1,9 +1,9 @@
 #!/bin/bash
 
 SCRIPT_DIR=$(dirname "$0")
-source "scripts/curl/config.sh"
+source "$SCRIPT_DIR/config.sh"
 
-source "scripts/curl/box.sh" 
+source "$SCRIPT_DIR/box.sh" 
 
 
 createHorizontalLayout () {

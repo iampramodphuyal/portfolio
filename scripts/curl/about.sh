@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source scripts/curl/horizontalLayout.sh
+SCRIPT_DIR=$(dirname "$0")
+source "$SCRIPT_DIR/horizontalLayout.sh"
 
-createHorizontalLayout  "scripts/curl/name.sh" "scripts/curl/info.sh"
+createHorizontalLayout  "$SCRIPT_DIR/name.sh" "$SCRIPT_DIR/info.sh"
 

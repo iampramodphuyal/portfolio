@@ -2,7 +2,7 @@
 
 
 SCRIPT_DIR=$(dirname "$0")
-source "scripts/curl/config.sh"
+source "$SCRIPT_DIR/config.sh"
 
 
 printf "%s            .--.          %spramod@portfolio\n" "$C_YELLOW" "$C_CYAN"

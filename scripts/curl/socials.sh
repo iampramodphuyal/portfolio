@@ -6,8 +6,8 @@
 
 
 SCRIPT_DIR=$(dirname "$0")
-source "scripts/curl/config.sh"
-source "scripts/curl/box.sh" 
+source "$SCRIPT_DIR/config.sh"
+source "$SCRIPT_DIR/box.sh" 
 
 draw_box "SOCIALS" 2 \
   "${I_WEBSITE} ${C_GREEN}${S_UNDERLINE}${CARD_WEBSITE}${C_DEFAULT}" \
