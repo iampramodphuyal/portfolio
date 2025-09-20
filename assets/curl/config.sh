@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Colors
 C_DEFAULT=$'\033[0m'
 C_WHITE=$'\033[1;37m'

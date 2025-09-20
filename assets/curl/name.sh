@@ -1,4 +1,4 @@
-source assets/curl/config.sh
+#!/bin/bash
 
 echo -e "
 ██████╗ ██████╗  █████╗ ███╗   ███╗ ██████╗ ██████╗ 
