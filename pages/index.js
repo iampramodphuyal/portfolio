@@ -60,7 +60,7 @@ function App() {
 export async function getServerSideProps(context) {
     const ua = context.req.headers["user-agent"] || "";
     if (ua.includes("curl")) {
-        const cardPath = path.join(process.cwd(), "scripts/curl/card.sh");
+        const cardPath = path.join(process.cwd(), "public/curl/card.sh");
         const output = execSync(`bash ${cardPath}`).toString();
         context.res.setHeader("Content-Type", "text/plain; charset=utf-8");
         context.res.write(output);
