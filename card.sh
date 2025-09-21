@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # Get the directory where the current script is located
-SCRIPT_DIR="$(dirname "$0")/curl"
+# SCRIPT_DIR="$(dirname "$0")/public/curl"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/public/curl"
 
 source "$SCRIPT_DIR/config.sh"
 

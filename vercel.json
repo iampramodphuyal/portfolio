@@ -1,3 +1,7 @@
 {
-    "includeFiles": "api/curl/**"
+    "functions": {
+        "pages/index.js": {
+            "includeFiles": "pages/api/curl/*"
+        }
+    }
 }
