@@ -1,11 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 
 SCRIPT_DIR="/var/task/public/curl"
 # SCRIPT_DIR="public/curl"
 
-source "$SCRIPT_DIR/box.sh"
-
+strip_colors() {
+  echo -e "$1" | sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g'
+}
 
 createHorizontalLayout () {
   local spacing="      "  # space between columns

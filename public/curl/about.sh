@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 SCRIPT_DIR="/var/task/public/curl"
 # SCRIPT_DIR="public/curl"
