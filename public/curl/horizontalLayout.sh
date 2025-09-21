@@ -7,7 +7,7 @@ strip_colors() {
 }
 
 createHorizontalLayout () {
-  local spacing=" "  # space between columns
+  local spacing="     "  # space between columns
 
   # read outputs
   # mapfile -t left  < <(bash "$1")
@@ -24,6 +24,13 @@ createHorizontalLayout () {
     (( len > maxlen )) && maxlen=$len
   done
 
+
+local maxright=0
+for r in "${right[@]}"; do
+    len=$(strip_colors "$r" | awk '{print length}')
+    (( len > maxright )) && maxright=$len
+done
+
   # find max line count
   local lines=$(( ${#left[@]} > ${#right[@]} ? ${#left[@]} : ${#right[@]} ))
 
@@ -33,10 +40,20 @@ createHorizontalLayout () {
     local r="${right[i]:-}"
     local clean_l=$(strip_colors "$l")
     local pad=$(( maxlen - ${#clean_l} ))
-    printf "%s%s%*s%s%s%s\n" \
-      "$C_YELLOW" "$l" "$pad" "" \
-      "$spacing" \
-      "$C_DEFAULT" "$r"
+
+
+local clean_r=$(strip_colors "$r")
+local pad_r=$(( maxright - ${#clean_r} ))
+
+printf "%s%s%*s%s%s%s%*s\n" \
+  "$C_YELLOW" "$l" "$pad" "" \
+  "$spacing" \
+  "$C_DEFAULT" "$r" "$pad_r" ""
+
+    # printf "%s%s%*s%s%s%s\n" \
+    #   "$C_YELLOW" "$l" "$pad" "" \
+    #   "$spacing" \
+    #   "$C_DEFAULT" "$r"
   done
   printf "%s\n" "$C_DEFAULT"
 }
