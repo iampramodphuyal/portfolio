@@ -2,12 +2,12 @@
 
 # This files contains info about my social networks
 #
-#
 
 SCRIPT_DIR="/var/task/public/curl"
+# SCRIPT_DIR="public/curl"
 
-# source "$SCRIPT_DIR/config.sh"
-# source "$SCRIPT_DIR/box.sh" 
+source "$SCRIPT_DIR/config.sh"
+source "$SCRIPT_DIR/box.sh" 
 
 draw_box "SOCIALS" 2 \
   "${I_WEBSITE} ${C_GREEN}${S_UNDERLINE}${CARD_WEBSITE}${C_DEFAULT}" \

@@ -1,8 +1,5 @@
 #!/bin/bash
 
-SCRIPT_DIR="/var/task/public/curl"
-
-source "$SCRIPT_DIR/config.sh"
 
 strip_colors() {
   echo -e "$1" \

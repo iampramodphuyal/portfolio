@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-# SCRIPT_DIR="$(dirname "$0")/curl"
-
 SCRIPT_DIR="/var/task/public/curl"
+# SCRIPT_DIR="public/curl"
 
 source "$SCRIPT_DIR/horizontalLayout.sh"
 

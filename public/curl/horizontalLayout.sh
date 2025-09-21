@@ -1,7 +1,5 @@
 #!/bin/bash
 
-SCRIPT_DIR="/var/task/public/curl"
-
 
 createHorizontalLayout () {
   local spacing="             "  # space between columns
@@ -10,8 +8,8 @@ createHorizontalLayout () {
   # mapfile -t left  < <(bash "$1")
   # mapfile -t right < <(bash "$2")
 
-    bash "$1" | mapfile -t left
-    bash "$2" | mapfile -t right
+    mapfile -t left <<<"$(bash "$1")"
+    mapfile -t right <<<"$(bash "$2")"
 
   # find max width of left column (ignoring colors)
   local maxlen=0
