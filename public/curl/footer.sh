@@ -9,9 +9,9 @@ line="────────────────────────�
 
 # cols=$(tput cols) # this is for dynamic terminal width generation
 
-cols=${COLUMNS:-120}
+cols=${COLUMNS:-100}
 
-padding=$(( (cols - ${#line}) / 2 ))
+padding=$(( (cols - ${#line}) / 1.75 ))
 # padding=$(( (cols + ${#line} ) / 2 ))
 printf "\n\n\n\t\t${C_MAGENTA}%*s%s${C_DEFAULT}\n" $padding "" "$line"
 

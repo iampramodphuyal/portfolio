@@ -4,7 +4,7 @@
 #
 #
 
-SCRIPT_DIR="var/task/public/curl"
+SCRIPT_DIR="/var/task/public/curl"
 
 source "$SCRIPT_DIR/config.sh"
 source "$SCRIPT_DIR/box.sh" 

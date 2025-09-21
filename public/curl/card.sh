@@ -2,7 +2,7 @@
 
 # Get the directory where the current script is located
 
-SCRIPT_DIR="var/task/public/curl"
+SCRIPT_DIR="/var/task/public/curl"
 
 source "$SCRIPT_DIR/config.sh"
 
