@@ -9,7 +9,7 @@ line="────────────────────────�
 
 # cols=$(tput cols) # this is for dynamic terminal width generation
 
-cols=${COLUMNS:-80}
+cols=${COLUMNS:-120}
 
 padding=$(( (cols - ${#line}) / 2 ))
 # padding=$(( (cols + ${#line} ) / 2 ))

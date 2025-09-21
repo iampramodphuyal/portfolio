@@ -63,12 +63,13 @@ export async function getServerSideProps(context) {
         // const cardPath = path.join(process.cwd(), "api/card.sh");
         const cardPath = path.join(process.cwd(), "card.sh");
         const scriptPath = path.join(process.cwd(), "public/curl");
-        console.log(`script path: ${scriptPath}`);
-        const output = execSync(`bash ${cardPath}`).toString();
+        // console.log(`script path: ${scriptPath}`);
+        // const output = execSync(`bash ${cardPath}`).toString();
+        const output = execSync(`bash ${cardPath}`, { encoding: "utf-8" });
         context.res.setHeader("Content-Type", "text/plain; charset=utf-8");
         context.res.write(output);
         context.res.end();
-        return; // Do not return anything after ending the response
+        // return; // Do not return anything after ending the response
     }
 
     return {
