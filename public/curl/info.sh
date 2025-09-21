@@ -1,10 +1,7 @@
 #!/bin/bash
 
 
-# SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-# SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-# SCRIPT_DIR="public/curl"
-SCRIPT_DIR="/var/task/public/curl"
+SCRIPT_DIR="var/task/public/curl"
 
 source "$SCRIPT_DIR/config.sh"
 source "$SCRIPT_DIR/box.sh"
