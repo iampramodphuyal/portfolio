@@ -1,13 +1,14 @@
 #!/bin/bash
 
 
-strip_colors() {
-  echo -e "$1" | sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g; s/[🌍📧🐙💼]/  /g'
-}
+SCRIPT_DIR="/var/task/public/curl"
+# SCRIPT_DIR="public/curl"
+
+source "$SCRIPT_DIR/box.sh"
 
 
 createHorizontalLayout () {
-  local spacing="         "  # space between columns
+  local spacing="      "  # space between columns
 
   # read outputs
     mapfile -t left <<<"$(bash "$1")"
@@ -38,20 +39,20 @@ createHorizontalLayout () {
     local r="${right[i]:-}"
     local clean_l=$(strip_colors "$l")
     local pad=$(( maxlen - ${#clean_l} ))
-    pad=0
+    # pad=0
 
     local clean_r=$(strip_colors "$r")
     local pad_r=$(( maxright - ${#clean_r} ))
 
-    # printf "%s%s%*s%s%s%s%*s\n" \
-    #   "$C_YELLOW" "$l" "$pad" "" \
-    #   "$spacing" \
-    #   "$C_DEFAULT" "$r" "$pad_r" ""
-
-    printf "%s%s%*s%s%s%s\n" \
+    printf "%s%s%*s%s%s%s%*s\n" \
       "$C_YELLOW" "$l" "$pad" "" \
       "$spacing" \
-      "$C_DEFAULT" "$r"
+      "$C_DEFAULT" "$r" "$pad_r" ""
+
+    # printf "%s%*s%s%s\n" \
+    #    "$l" "$pad"  \
+    #     "$spacing" \
+    #    "$r"
   done
   printf "%s\n" "$C_DEFAULT"
 }
