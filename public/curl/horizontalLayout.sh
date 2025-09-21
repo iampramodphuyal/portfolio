@@ -3,8 +3,13 @@
 
 SCRIPT_DIR="/var/task/public/curl"
 # SCRIPT_DIR="public/curl"
-source "$SCRIPT_DIR/box.sh"
 
+strip_colors() {
+  # Use printf to preserve spaces exactly
+  printf "%s" "$1" \
+    | sed 's/\x1b\[[0-9;]*[A-Za-z]//g' \
+    | sed 's/[🌍📧🐙💼]/  /g'
+}
 
 createHorizontalLayout () {
   local spacing="      "  # space between columns
@@ -21,16 +26,8 @@ createHorizontalLayout () {
     (( len > maxlen )) && maxlen=$len
   done
 
-
-    local maxright=0
-    for r in "${right[@]}"; do
-        len=$(strip_colors "$r" | awk '{print length}')
-        (( len > maxright )) && maxright=$len
-    done
-
   # find max line count
   local lines=$(( ${#left[@]} > ${#right[@]} ? ${#left[@]} : ${#right[@]} ))
-
 
   # render
   for ((i=0; i<lines; i++)); do
@@ -40,16 +37,9 @@ createHorizontalLayout () {
     local pad=$(( maxlen - ${#clean_l} ))
     # pad=0
 
-    printf "%s%s%*s%s%s%s\n" \
-      "$C_YELLOW" "$l" "$pad" \
-      "$spacing" \
-      "$C_DEFAULT" "$r" 
+    printf "%s%s%s%s%s\n" "$C_YELLOW" "$l" "$(printf '%*s' "$pad" '')" "$spacing" "$C_DEFAULT$r"
 
-    # printf "%s%*s%s%s\n" \
-    #    "$l" "$pad"  \
-    #     "$spacing" \
-    #    "$r"
-  done
+    done
     printf "%s\n" "$C_DEFAULT"
 }
 
