@@ -22,11 +22,11 @@ createHorizontalLayout () {
   done
 
 
-local maxright=0
-for r in "${right[@]}"; do
-    len=$(strip_colors "$r" | awk '{print length}')
-    (( len > maxright )) && maxright=$len
-done
+    local maxright=0
+    for r in "${right[@]}"; do
+        len=$(strip_colors "$r" | awk '{print length}')
+        (( len > maxright )) && maxright=$len
+    done
 
   # find max line count
   local lines=$(( ${#left[@]} > ${#right[@]} ? ${#left[@]} : ${#right[@]} ))
@@ -42,10 +42,6 @@ done
 
     local clean_r=$(strip_colors "$r")
     local pad_r=$(( maxright - ${#clean_r} ))
-
-
-    echo "L: '${left[i]}' len=${#left[i]}"
-    echo "R: '${right[i]}' len=${#right[i]}"
 
     printf "%s%s%*s%s%s%s%*s\n" \
       "$C_YELLOW" "$l" "$pad" "" \
