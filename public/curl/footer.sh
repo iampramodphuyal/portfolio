@@ -6,7 +6,11 @@ C_YELLOW=$'\033[33m'
 C_DEFAULT=$'\033[0m'
 
 line="─────────────────────────────"
-cols=$(tput cols)
+
+# cols=$(tput cols) # this is for dynamic terminal width generation
+
+cols=${COLUMNS:-80}
+
 padding=$(( (cols - ${#line}) / 2 ))
 # padding=$(( (cols + ${#line} ) / 2 ))
 printf "\n\n\n\t\t${C_MAGENTA}%*s%s${C_DEFAULT}\n" $padding "" "$line"
