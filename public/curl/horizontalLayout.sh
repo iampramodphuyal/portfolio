@@ -35,26 +35,49 @@ createHorizontalLayout () {
 
 
   # render
-  for ((i=0; i<lines; i++)); do
-    local l="${left[i]:-}"
-    local r="${right[i]:-}"
-    local clean_l=$(strip_colors "$l")
-    local pad=$(( maxlen - ${#clean_l} ))
-    # pad=0
+  # for ((i=0; i<lines; i++)); do
+  #   local l="${left[i]:-}"
+  #   local r="${right[i]:-}"
+  #   local clean_l=$(strip_colors "$l")
+  #   local pad=$(( maxlen - ${#clean_l} ))
+  #   # pad=0
+  #
+  #   local clean_r=$(strip_colors "$r")
+  #   local pad_r=$(( maxright - ${#clean_r} ))
+  #
+  #   printf "%s%s%*s%s%s%s%*s\n" \
+  #     "$C_YELLOW" "$l" "$pad" "" \
+  #     "$spacing" \
+  #     "$C_DEFAULT" "$r" "$pad_r" ""
+  #
+  #   # printf "%s%*s%s%s\n" \
+  #   #    "$l" "$pad"  \
+  #   #     "$spacing" \
+  #   #    "$r"
+  # done
 
-    local clean_r=$(strip_colors "$r")
-    local pad_r=$(( maxright - ${#clean_r} ))
+    i=0
+    while [ $i -lt "$lines" ]; do
+        l="${left[$i]:-}"
+        r="${right[$i]:-}"
 
-    printf "%s%s%*s%s%s%s%*s\n" \
-      "$C_YELLOW" "$l" "$pad" "" \
-      "$spacing" \
-      "$C_DEFAULT" "$r" "$pad_r" ""
+        clean_l=$(strip_colors "$l")
+        pad=$(( maxlen - ${#clean_l} ))
 
-    # printf "%s%*s%s%s\n" \
-    #    "$l" "$pad"  \
-    #     "$spacing" \
-    #    "$r"
-  done
+        clean_r=$(strip_colors "$r")
+        pad_r=$(( maxright - ${#clean_r} ))
+
+        # pad must not go negative
+        [ $pad -lt 0 ] && pad=0
+        [ $pad_r -lt 0 ] && pad_r=0
+
+        printf "%s%s%*s%s%s%s%*s\n" \
+          "$C_YELLOW" "$l" "$pad" "" \
+          "$spacing" \
+          "$C_DEFAULT" "$r" "$pad_r" ""
+
+        i=$((i+1))
+    done
   printf "%s\n" "$C_DEFAULT"
 }
 
