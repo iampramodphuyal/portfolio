@@ -1,5 +1,10 @@
 #!/bin/bash
 
+strip_colors() {
+  echo -e "$1" \
+    | sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' \
+    | sed -E 's/[🌍📧🐙💼]/  /g'
+}
 
 createHorizontalLayout () {
   local spacing="             "  # space between columns
