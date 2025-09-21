@@ -5,6 +5,7 @@
 
 # SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SCRIPT_DIR="public/curl"
+SCRIPT_DIR="/var/task/public/curl"
 
 source "$SCRIPT_DIR/horizontalLayout.sh"
 
