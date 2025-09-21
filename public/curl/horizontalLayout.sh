@@ -38,20 +38,20 @@ createHorizontalLayout () {
     local r="${right[i]:-}"
     local clean_l=$(strip_colors "$l")
     local pad=$(( maxlen - ${#clean_l} ))
-
+    pad=0
 
     local clean_r=$(strip_colors "$r")
     local pad_r=$(( maxright - ${#clean_r} ))
 
-    printf "%s%s%*s%s%s%s%*s\n" \
-      "$C_YELLOW" "$l" "$pad" "" \
-      "$spacing" \
-      "$C_DEFAULT" "$r" "$pad_r" ""
-
-    # printf "%s%s%*s%s%s%s\n" \
+    # printf "%s%s%*s%s%s%s%*s\n" \
     #   "$C_YELLOW" "$l" "$pad" "" \
     #   "$spacing" \
-    #   "$C_DEFAULT" "$r"
+    #   "$C_DEFAULT" "$r" "$pad_r" ""
+
+    printf "%s%s%*s%s%s%s\n" \
+      "$C_YELLOW" "$l" "$pad" "" \
+      "$spacing" \
+      "$C_DEFAULT" "$r"
   done
   printf "%s\n" "$C_DEFAULT"
 }
