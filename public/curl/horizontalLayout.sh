@@ -7,7 +7,7 @@ strip_colors() {
 }
 
 createHorizontalLayout () {
-  local spacing="       "  # space between columns
+  local spacing=" "  # space between columns
 
   # read outputs
   # mapfile -t left  < <(bash "$1")
