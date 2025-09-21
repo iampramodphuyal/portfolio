@@ -5,11 +5,9 @@ SCRIPT_DIR="/var/task/public/curl"
 # SCRIPT_DIR="public/curl"
 
 strip_colors() {
-  # Use printf to preserve spaces exactly
-  printf "%s" "$1" \
-    | sed 's/\x1b\[[0-9;]*[A-Za-z]//g' \
-    | sed 's/[🌍📧🐙💼]/  /g'
+    printf "%s" "$1" | sed 's/\x1b\[[0-9;]*[A-Za-z]//g' | sed 's/[🌍📧🐙💼]/  /g'
 }
+
 
 createHorizontalLayout () {
   local spacing="      "  # space between columns
@@ -21,8 +19,11 @@ createHorizontalLayout () {
   # find max width of left column (ignoring colors)
   local maxlen=0
   for l in "${left[@]}"; do
-    local len
-    len=$(strip_colors "$l" | awk '{print length}')
+    # local len
+    # len=$(strip_colors "$l" | awk '{print length}')
+    clean_l=$(strip_colors "$l")
+    # Use wc -m for visual character count
+    local len=$(printf "%s" "$clean_l" | wc -m)
     (( len > maxlen )) && maxlen=$len
   done
 
@@ -34,7 +35,9 @@ createHorizontalLayout () {
     local l="${left[i]:-}"
     local r="${right[i]:-}"
     local clean_l=$(strip_colors "$l")
-    local pad=$(( maxlen - ${#clean_l} ))
+    local ln=$(printf "%s" "$clean_l" | wc -m)
+    # local pad=$(( maxlen - ${#clean_l} ))
+    local pad=$(( maxlen - $ln ))
     # pad=0
 
     printf "%s%s%s%s%s\n" "$C_YELLOW" "$l" "$(printf '%*s' "$pad" '')" "$spacing" "$C_DEFAULT$r"
