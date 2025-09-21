@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
 
+
 strip_colors() {
-  echo -e "$1" \
-    | sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' \
-    | sed -E 's/[🌍📧🐙💼]/  /g'
+  printf "%s" "$1" \
+    | sed 's/\x1b\[[0-9;]*[A-Za-z]//g' \
+    | sed 's/[🌍📧🐙💼]/  /g'
 }
+
 
 
 # --- Draw a boxed table ---
