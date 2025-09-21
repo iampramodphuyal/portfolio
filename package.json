@@ -1,6 +1,6 @@
 {
     "name": "PramodPhuyalPortfolio",
-    "version": "2.5.11",
+    "version": "2.5.12",
     "private": true,
     "dependencies": {
         "flowbite": "^1.4.7",
