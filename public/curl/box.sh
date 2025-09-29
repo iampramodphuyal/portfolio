@@ -4,7 +4,7 @@
 
 strip_colors() {
   printf "%s" "$1" \
-    | sed 's/\x1b\[[0-9;]*[A-Za-z]//g' \
+    | sed -r 's/\x1b\[[0-9;]*[A-Za-z]//g' \
     | sed 's/[🌍📧🐙💼]/  /g'
 }
 
@@ -48,8 +48,8 @@ draw_box() {
   for line in "${lines[@]}"; do
     local clean=$(strip_colors "$line")
     local pad_right=$((maxlen - ${#clean} + padding))
-    local formatteLine=$(echo -e "$line") # since printf doesnot provide colored output like echo
-    printf "│%*s%s%*s│\n" "$padding" "" "${formatteLine}" "$pad_right" ""
+    local formattedLine=$(echo -e "$line") # since printf doesnot provide colored output like echo
+    printf "│%*s%s%*s│\n" "$padding" "" "${formattedLine}" "$pad_right" ""
   done
 
   # Bottom border

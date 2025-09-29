@@ -15,14 +15,27 @@ C_GRAY=$'\033[90m'
 
 
 # Styles
-S_BOLD="\033[1m"
-S_UNDERLINE="\033[4m"
+# S_BOLD="\033[1m"
+# S_UNDERLINE="\033[4m"
+#
+# # Icons
+# I_WEBSITE="\033[38;5;81m🌍"
+# I_EMAIL="\033[38;5;208m📧"
+# I_GITHUB="\033[38;5;245m🐙"
+# I_LINKEDIN="\033[38;5;33m💼"
 
-# Icons
-I_WEBSITE="\033[38;5;81m🌍"
-I_EMAIL="\033[38;5;208m📧"
-I_GITHUB="\033[38;5;245m🐙"
-I_LINKEDIN="\033[38;5;33m💼"
+
+# Styles
+S_BOLD=$'\033[1m'
+S_UNDERLINE=$'\033[4m'
+
+# Icons with colors
+I_WEBSITE=$'\033[38;5;81m🌍'
+I_EMAIL=$'\033[38;5;208m📧'
+I_GITHUB=$'\033[38;5;245m🐙'
+I_LINKEDIN=$'\033[38;5;33m💼'
+
+
 
 # Card Content
 CARD_NAME="Pramod Phuyal"
