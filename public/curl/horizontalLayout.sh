@@ -19,11 +19,10 @@ createHorizontalLayout () {
   # find max width of left column (ignoring colors)
   local maxlen=0
   for l in "${left[@]}"; do
-    # local len
-    # len=$(strip_colors "$l" | awk '{print length}')
-    clean_l=$(strip_colors "$l")
+    local clean_l=$(strip_colors "$l")
     # Use wc -m for visual character count
-    local len=$(printf "%s" "$clean_l" | wc -m)
+    # local len=$(printf "%s" "$clean_l" | wc -m)
+    local len=$(echo -e "$clean_l" | wc -m)
     (( len > maxlen )) && maxlen=$len
   done
 
@@ -32,17 +31,20 @@ createHorizontalLayout () {
 
   # render
   for ((i=0; i<lines; i++)); do
-    local l="${left[i]:-}"
-    local r="${right[i]:-}"
-    local clean_l=$(strip_colors "$l")
-    local ln=$(printf "%s" "$clean_l" | wc -m)
-    # local pad=$(( maxlen - ${#clean_l} ))
-    local pad=$(( maxlen - $ln ))
-    # pad=0
+    local l
+    local r
+    local clean_l
+    local pad
+    l="${left[i]:-}"
+    r="${right[i]:-}"
+    clean_l=$(strip_colors "$l")
+    # local ln=$(printf "%s" "$clean_l" | wc -m)
+    pad=$(( maxlen - ${#clean_l} ))
+    # local pad=$(( maxlen - $ln ))
 
     printf "%s%s%s%s%s\n" "$C_YELLOW" "$l" "$(printf '%*s' "$pad" '')" "$spacing" "$C_DEFAULT$r"
 
     done
-    printf "%s\n" "$C_DEFAULT"
+  printf "%s\n" "$C_DEFAULT"
 }
 
