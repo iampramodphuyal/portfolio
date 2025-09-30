@@ -20,7 +20,6 @@ createHorizontalLayout () {
   local maxlen=0
   for l in "${left[@]}"; do
     local clean_l=$(strip_colors "$l")
-    # Use wc -m for visual character count
     local len=$(printf "%s" "$clean_l" | wc -m)
     (( len > maxlen )) && maxlen=$len
   done
@@ -39,6 +38,14 @@ createHorizontalLayout () {
     clean_l=$(strip_colors "$l")
     local ln=$(printf "%s" "$clean_l" | wc -m)
     pad=$(( maxlen - ln ))
+
+    printf "DEBUG: clean_l='%s', bash_len=%s, wc_len=%s, awk_len=%s, maxlen=%s, pad=%s\n" \
+        "$clean_l" \
+        "${#clean_l}" \
+        "$ln" \
+        "$(printf "%s" "$clean_l" | awk '{print length}')" \
+        "$maxlen" \
+        "$pad" >&2
 
     printf "%s%s%s%s%s\n" "$C_YELLOW" "$l" "$(printf '%*s' "$pad" '')" "$spacing" "$C_DEFAULT$r"
 
