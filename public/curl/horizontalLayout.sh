@@ -41,7 +41,7 @@ createHorizontalLayout () {
     # local ln=$(printf "%s" "$clean_l" | wc -m)
     pad=$(( maxlen - ${#clean_l} ))
     # local pad=$(( maxlen - $ln ))
-
+    
     printf "DEBUG: clean_l='%s', len=%s, maxlen=%s, pad=%s
 " "$clean_l" "${#clean_l}" "$maxlen" "$pad" >&2
     printf "%s%s%s%s%s
