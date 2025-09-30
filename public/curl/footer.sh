@@ -13,7 +13,7 @@ printf "\n\n\n\t\t${C_MAGENTA}%*s%s${C_DEFAULT}\n" $padding "" "$line"
 
 # Example with footer text
 footer="[NOTE] Minimal. Efficient. Terminal-inspired."
-copyrights="© 2025 Pramod Phuyal | Last updated: Sep 2025 | v1.0"
+copyrights="© 2025 Pramod Phuyal | Last updated: Sep 2025 | v1.1"
 footerPadding=$(( (cols - ${#footer}) / 2 ))
 copyrightsPadding=$(( (cols - ${#copyrights}) / 2 ))
 # padding=$(( (cols ) / 2 ))
