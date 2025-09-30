@@ -22,7 +22,7 @@ createHorizontalLayout () {
     local clean_l=$(strip_colors "$l")
     # Use wc -m for visual character count
     # local len=$(printf "%s" "$clean_l" | wc -m)
-    local len=$(echo -e "$clean_l" | wc -m)
+    local len=${#clean_l}
     (( len > maxlen )) && maxlen=$len
   done
 
