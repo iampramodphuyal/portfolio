@@ -42,7 +42,10 @@ createHorizontalLayout () {
     pad=$(( maxlen - ${#clean_l} ))
     # local pad=$(( maxlen - $ln ))
 
-    printf "%s%s%s%s%s\n" "$C_YELLOW" "$l" "$(printf '%*s' "$pad" '')" "$spacing" "$C_DEFAULT$r"
+    printf "DEBUG: clean_l='%s', len=%s, maxlen=%s, pad=%s
+" "$clean_l" "${#clean_l}" "$maxlen" "$pad" >&2
+    printf "%s%s%s%s%s
+" "$C_YELLOW" "$l" "$(printf '%*s' "$pad" '')" "$spacing" "$C_DEFAULT$r"
 
     done
   printf "%s\n" "$C_DEFAULT"
