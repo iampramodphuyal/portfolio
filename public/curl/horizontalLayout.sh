@@ -20,7 +20,8 @@ createHorizontalLayout () {
   local maxlen=0
   for l in "${left[@]}"; do
     local clean_l=$(strip_colors "$l")
-    local len=$(printf "%s" "$clean_l" | sed 's/[^[:ascii:]]/#/g' | wc -m)
+    local len=${#clean_l}
+    # local len=$(printf "%s" "$clean_l" | sed 's/[^[:ascii:]]/#/g' | wc -c)
     (( len > maxlen )) && maxlen=$len
   done
 
@@ -36,11 +37,14 @@ createHorizontalLayout () {
     l="${left[i]:-}"
     r="${right[i]:-}"
     clean_l=$(strip_colors "$l")
-    local ln=$(printf "%s" "$clean_l" | sed 's/[^[:ascii:]]/#/g' | wc -m)
+    # local ln=$(printf "%s" "$clean_l" | sed 's/[^[:ascii:]]/#/g' | wc -c)
+    local ln=${#clean_l}
     pad=$(( maxlen - ln ))
 
-    printf "%s%s%s%s%s\n" "$C_YELLOW" "$l" "$(printf '%*s' "$pad" '')" "$spacing" "$C_DEFAULT$r"
+    # echo -e "pad: $pad | maxlen: $maxlen | ln: $ln"
 
-    done
+    printf "%s%s%s%s%s%s\n" "$C_YELLOW" "$l" "$(printf '%*s' "$pad" '')" "$spacing" "$C_DEFAULT" "$r"
+
+  done
   printf "%s\n" "$C_DEFAULT"
 }
