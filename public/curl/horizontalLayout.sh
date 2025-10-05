@@ -20,9 +20,9 @@ createHorizontalLayout () {
   local maxlen=0
   for l in "${left[@]}"; do
     local clean_l=$(strip_colors "$l")
-    local len=$(printf "%s" "$clean_l" | perl -CS -ne 'print length')
+    local len=$(printf "%s" "$clean_l" | sed 's/[^[:ascii:]]/#/g' | wc -c)
     (( len > maxlen )) && maxlen=$len
-  n
+  done
 
   # find max line count
   local lines=$(( ${#left[@]} > ${#right[@]} ? ${#left[@]} : ${#right[@]} ))
@@ -36,7 +36,7 @@ createHorizontalLayout () {
     l="${left[i]:-}"
     r="${right[i]:-}"
     clean_l=$(strip_colors "$l")
-    local ln=$(printf "%s" "$clean_l" | perl -CS -ne 'print length')
+    local ln=$(printf "%s" "$clean_l" | sed 's/[^[:ascii:]]/#/g' | wc -c)
     pad=$(( maxlen - ln ))
 
     printf "%s%s%s%s%s\n" "$C_YELLOW" "$l" "$(printf '%*s' "$pad" '')" "$spacing" "$C_DEFAULT$r"
