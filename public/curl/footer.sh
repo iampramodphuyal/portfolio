@@ -9,7 +9,7 @@ cols=${COLUMNS:-100}
 
 padding=$(( (cols - ${#line}) / 2 ))
 # padding=$(( (cols + ${#line} ) / 2 ))
-printf "\n\n\n\t\t${C_MAGENTA}%*s%s${C_DEFAULT}\n" $padding "" "$line"
+# printf "\n\n\n\t\t${C_MAGENTA}%*s%s${C_DEFAULT}\n" $padding "" "$line"
 
 # Example with footer text
 footer="[NOTE] Minimal. Efficient. Terminal-inspired."
