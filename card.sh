@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
+
 # Get the directory where the current script is located
 
 SCRIPT_DIR="/var/task/public/curl"
