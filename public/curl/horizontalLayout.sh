@@ -10,7 +10,7 @@ strip_colors() {
 
 
 createHorizontalLayout () {
-  local spacing="      "  # space between columns
+  local spacing="          "  # space between columns
 
   # read outputs
     mapfile -t left <<<"$(bash "$1")"
@@ -20,9 +20,7 @@ createHorizontalLayout () {
   local maxlen=0
   for l in "${left[@]}"; do
     local clean_l=$(strip_colors "$l")
-    clean_l=$(echo "$clean_l" | sed 's/[^[:ascii:]]/#/g')
-    local len=${#clean_l}
-    # local len=$(printf "%s" "$clean_l" | sed 's/[^[:ascii:]]/#/g' | wc -c)
+    local len=$(printf "%s" "$clean_l" | wc -m)
     (( len > maxlen )) && maxlen=$len
   done
 
@@ -38,9 +36,7 @@ createHorizontalLayout () {
     l="${left[i]:-}"
     r="${right[i]:-}"
     clean_l=$(strip_colors "$l")
-    clean_l=$(echo "$clean_l" | sed 's/[^[:ascii:]]/#/g')
-    # local ln=$(printf "%s" "$clean_l" | sed 's/[^[:ascii:]]/#/g' | wc -c)
-    local ln=${#clean_l}
+    local ln=$(printf "%s" "$clean_l"  | wc -m)
     pad=$(( maxlen - ln ))
 
     # echo -e "pad: $pad | maxlen: $maxlen | ln: $ln"
