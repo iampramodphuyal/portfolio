@@ -14,7 +14,7 @@ export const experience: Experience[] = [
     startDate: "Dec 2025",
     endDate: "Present",
     description:
-      "Building software solutions and contributing to product development.",
+      "Building and scaling an AI-first automation platform, developing intelligent workflows and integrations that streamline complex business processes.",
     logo: "/images/beena.png",
   },
   {
