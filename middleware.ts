@@ -18,11 +18,21 @@ export function middleware(request: NextRequest) {
         new URL(`/api/curl${pathname}`, request.url),
       );
     }
+    if (pathname === "/projects") {
+      return NextResponse.rewrite(
+        new URL("/api/curl/projects", request.url),
+      );
+    }
+    if (pathname === "/experience") {
+      return NextResponse.rewrite(
+        new URL("/api/curl/experience", request.url),
+      );
+    }
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/", "/blog", "/blog/:slug*"],
+  matcher: ["/", "/blog", "/blog/:slug*", "/projects", "/experience"],
 };
