@@ -28,11 +28,16 @@ export function middleware(request: NextRequest) {
         new URL("/api/curl/experience", request.url),
       );
     }
+    if (pathname === "/contact") {
+      return NextResponse.rewrite(
+        new URL("/api/curl/contact", request.url),
+      );
+    }
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/", "/blog", "/blog/:slug*", "/projects", "/experience"],
+  matcher: ["/", "/blog", "/blog/:slug*", "/projects", "/experience", "/contact"],
 };
