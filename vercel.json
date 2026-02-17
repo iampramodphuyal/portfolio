@@ -1,7 +1,7 @@
 {
-    "functions": {
-        "pages/index.js": {
-            "includeFiles": "pages/api/curl/*"
-        }
+  "functions": {
+    "app/api/curl/route.ts": {
+      "includeFiles": "card.sh,public/curl/**"
     }
+  }
 }

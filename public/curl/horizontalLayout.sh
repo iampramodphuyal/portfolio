@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 
-SCRIPT_DIR="/var/task/public/curl"
-# SCRIPT_DIR="public/curl"
+SCRIPT_DIR="${SCRIPT_DIR:-/var/task/public/curl}"
 
 strip_colors() {
     printf "%s" "$1" | sed 's/\x1b\[[0-9;]*[A-Za-z]//g' | sed 's/[🌍📧🐙💼]/  /g'
