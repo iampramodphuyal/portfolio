@@ -31,7 +31,7 @@ export default function ProjectsPage() {
         {featured && (
           <Card>
             <Link href={featured.url || featured.repository || "#"} target="_blank">
-              <article className="relative w-full h-full p-4 md:p-8">
+              <article className="relative w-full h-full p-4 md:p-8 pb-12 md:pb-20">
                 <div className="flex items-center justify-between gap-2">
                   <div className="text-xs text-zinc-100">
                     {featured.date ? (
