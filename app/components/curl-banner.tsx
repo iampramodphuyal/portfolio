@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-const DOMAIN = "pramodphuyal.com.np";
+const DOMAIN = "https://pramodphuyal.com.np";
 
 export const CurlBanner: React.FC = () => {
   const pathname = usePathname();

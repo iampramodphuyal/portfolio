@@ -46,7 +46,7 @@ export async function GET() {
   }
 
   output += `${C_DIM}─────────────────────────────────────────────────${C_RESET}\n`;
-  output += `${C_DIM}  ← curl pramodphuyal.com.np${C_RESET}\n`;
+  output += `${C_DIM}  ← curl https://pramodphuyal.com.np${C_RESET}\n`;
 
   return new Response(output, {
     headers: { "Content-Type": "text/plain; charset=utf-8" },

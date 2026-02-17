@@ -5,7 +5,7 @@ SCRIPT_DIR="${SCRIPT_DIR:-/var/task/public/curl}"
 source "$SCRIPT_DIR/config.sh"
 source "$SCRIPT_DIR/box.sh"
 
-DOMAIN="pramodphuyal.com.np"
+DOMAIN="https://pramodphuyal.com.np"
 
 draw_box "EXPLORE" 2 \
   "${C_GREEN}>${C_DEFAULT} ${C_CYAN}curl ${S_UNDERLINE}${DOMAIN}/projects${C_DEFAULT}${C_GRAY}     # what I've built${C_DEFAULT}" \

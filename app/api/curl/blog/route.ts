@@ -34,12 +34,12 @@ export async function GET() {
       output += `${C_GREEN}  [${i + 1}]${C_RESET} ${C_BOLD}${post.title}${C_RESET}\n`;
       output += `${C_DIM}      ${date}${tags ? ` • ${tags}` : ""}${C_RESET}\n`;
       output += `${C_CYAN}      ${post.description}${C_RESET}\n`;
-      output += `${C_DIM}      curl ${C_UNDERLINE}pramodphuyal.com.np/blog/${post.slug}${C_RESET}\n\n`;
+      output += `${C_DIM}      curl ${C_UNDERLINE}https://pramodphuyal.com.np/blog/${post.slug}${C_RESET}\n\n`;
     });
   }
 
   output += `${C_DIM}─────────────────────────────────────────────────${C_RESET}\n`;
-  output += `${C_DIM}  ← curl pramodphuyal.com.np${C_RESET}\n`;
+  output += `${C_DIM}  ← curl https://pramodphuyal.com.np${C_RESET}\n`;
 
   return new Response(output, {
     headers: { "Content-Type": "text/plain; charset=utf-8" },
