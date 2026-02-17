@@ -1,6 +1,7 @@
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { experience } from "@/data/experience";
+import { certifications } from "@/data/certifications";
 import { education } from "@/data/education";
 
 export default function ExperiencePage() {
@@ -42,6 +43,37 @@ export default function ExperiencePage() {
                     {exp.startDate} - {exp.endDate}
                   </p>
                   <p className="text-sm text-zinc-400">{exp.description}</p>
+                </article>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        <div className="w-full h-px bg-zinc-800" />
+
+        {/* Certifications */}
+        <div className="space-y-8">
+          <h3 className="text-2xl font-bold text-zinc-100 font-display">Certifications</h3>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {certifications.map((cert) => (
+              <Card key={cert.institution}>
+                <article className="p-4 md:p-8">
+                  <div className="flex items-center gap-4 mb-4">
+                    <img
+                      src={cert.logo}
+                      alt={cert.institution}
+                      className="w-12 h-12 rounded-lg object-contain bg-zinc-800 p-1"
+                    />
+                    <div>
+                      <h4 className="text-lg font-medium text-zinc-100 font-display">
+                        {cert.institution}
+                      </h4>
+                    </div>
+                  </div>
+                  <p className="text-sm text-zinc-200 mb-1">{cert.program}</p>
+                  <p className="text-xs text-zinc-500">
+                    {cert.startDate} - {cert.endDate}
+                  </p>
                 </article>
               </Card>
             ))}

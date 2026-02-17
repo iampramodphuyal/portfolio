@@ -15,13 +15,6 @@ export const education: Education[] = [
     logo: "/images/acme.png",
   },
   {
-    institution: "Codetantra",
-    program: "Python Programming",
-    startDate: "Jan 2019",
-    endDate: "Mar 2019",
-    logo: "/images/codetantra.png",
-  },
-  {
     institution: "Prerana",
     program: "+2 Science",
     startDate: "Jul 2013",
