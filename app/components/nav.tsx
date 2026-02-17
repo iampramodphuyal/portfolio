@@ -2,6 +2,7 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import { CurlBanner } from "./curl-banner";
 
 export const Navigation: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
@@ -60,6 +61,7 @@ export const Navigation: React.FC = () => {
           </Link>
         </div>
       </div>
+      <CurlBanner />
     </header>
   );
 };

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Particles from "./components/particles";
+import { CurlBanner } from "./components/curl-banner";
 
 const navigation = [
   { name: "Projects", href: "/projects" },
@@ -47,7 +48,8 @@ export default function Home() {
           .
         </h2>
       </div>
-      <p className="absolute bottom-4 text-xs text-zinc-700 animate-fade-in">
+      <CurlBanner />
+      <p className="absolute bottom-10 text-xs text-zinc-700 animate-fade-in">
         Design inspired by{" "}
         <Link
           target="_blank"
