@@ -4,12 +4,25 @@ export function middleware(request: NextRequest) {
   const userAgent = request.headers.get("user-agent") || "";
 
   if (userAgent.includes("curl")) {
-    return NextResponse.rewrite(new URL("/api/curl", request.url));
+    const { pathname } = request.nextUrl;
+
+    // Route curl requests to their API counterparts
+    if (pathname === "/") {
+      return NextResponse.rewrite(new URL("/api/curl", request.url));
+    }
+    if (pathname === "/blog") {
+      return NextResponse.rewrite(new URL("/api/curl/blog", request.url));
+    }
+    if (pathname.startsWith("/blog/")) {
+      return NextResponse.rewrite(
+        new URL(`/api/curl${pathname}`, request.url),
+      );
+    }
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: "/",
+  matcher: ["/", "/blog", "/blog/:slug*"],
 };
