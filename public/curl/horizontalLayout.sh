@@ -11,9 +11,20 @@ strip_colors() {
 createHorizontalLayout () {
   local spacing="          "  # space between columns
 
-  # read outputs
-    mapfile -t left <<<"$(bash "$1")"
-    mapfile -t right <<<"$(bash "$2")"
+  # read outputs into arrays (compatible with bash 3.2+)
+    local i=0
+    local left=()
+    while IFS= read -r line; do
+      left[i]="$line"
+      i=$((i + 1))
+    done <<<"$(bash "$1")"
+
+    i=0
+    local right=()
+    while IFS= read -r line; do
+      right[i]="$line"
+      i=$((i + 1))
+    done <<<"$(bash "$2")"
 
   # find max width of left column (ignoring colors)
   local maxlen=0
