@@ -16,5 +16,8 @@ source "$SCRIPT_DIR/about.sh"
 echo -e "\n"
 source "$SCRIPT_DIR/custom-details.sh"
 
+echo -e "\n"
+source "$SCRIPT_DIR/endpoints.sh"
+
 source "$SCRIPT_DIR/footer.sh"
 
