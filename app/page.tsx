@@ -47,6 +47,16 @@ export default function Home() {
           .
         </h2>
       </div>
+      <p className="absolute bottom-4 text-xs text-zinc-700 animate-fade-in">
+        Design inspired by{" "}
+        <Link
+          target="_blank"
+          href="https://chronark.com"
+          className="underline duration-500 hover:text-zinc-500"
+        >
+          chronark.com
+        </Link>
+      </p>
     </div>
   );
 }
