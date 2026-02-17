@@ -9,12 +9,21 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
+    company: "Beena",
+    role: "Software Engineer",
+    startDate: "Dec 2025",
+    endDate: "Present",
+    description:
+      "Building software solutions and contributing to product development.",
+    logo: "/images/beena.png",
+  },
+  {
     company: "Grepsr",
     role: "Service Delivery Engineer",
     startDate: "May 2022",
-    endDate: "Present",
+    endDate: "Dec 2025",
     description:
-      "Working as a Service Delivery Engineer, ensuring reliable data delivery pipelines and maintaining service quality for clients.",
+      "Worked as a Service Delivery Engineer, ensuring reliable data delivery pipelines and maintaining service quality for clients.",
     logo: "/images/grepsr.png",
   },
   {
