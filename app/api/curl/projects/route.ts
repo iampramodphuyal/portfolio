@@ -33,6 +33,9 @@ export async function GET() {
       output += `${C_GREEN}  [${i + 1}]${C_RESET} ${C_BOLD}${project.title}${C_RESET}\n`;
       output += `${C_DIM}      ${date}${C_RESET}\n`;
       output += `${C_CYAN}      ${project.description}${C_RESET}\n`;
+      if (project.proprietary) {
+        output += `      ${C_DIM}(proprietary — no public repo)${C_RESET}\n`;
+      }
       if (project.url) {
         output += `      ${C_GREEN}${C_UNDERLINE}${project.url}${C_RESET}\n`;
       }

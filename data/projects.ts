@@ -1,11 +1,15 @@
-export type Project = {
+type ProjectBase = {
   title: string;
   description: string;
   date?: string;
-  url?: string;
-  repository?: string;
   published: boolean;
 };
+
+// Proprietary work has no public links — that's a stated fact, not an
+// inference from missing URLs (unreleased personal projects also lack links).
+export type Project =
+  | (ProjectBase & { proprietary?: false; url?: string; repository?: string })
+  | (ProjectBase & { proprietary: true; url?: never; repository?: never });
 
 export const projects: Project[] = [
   {
