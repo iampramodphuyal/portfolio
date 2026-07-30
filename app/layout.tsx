@@ -2,20 +2,28 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
 import { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { site } from "@/data/site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: "Pramod Phuyal",
-    template: "%s | Pramod Phuyal",
+    default: site.name,
+    template: `%s | ${site.name}`,
   },
-  description: "Software Engineer / Service Delivery Engineer",
+  description: site.description,
   openGraph: {
-    title: "Pramod Phuyal",
-    description: "Software Engineer / Service Delivery Engineer",
-    url: "https://pramodphuyal.com.np",
-    siteName: "pramodphuyal.com.np",
+    title: site.name,
+    description: site.description,
+    url: site.url,
+    siteName: new URL(site.url).host,
     locale: "en-US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
   },
   robots: {
     index: true,
@@ -53,6 +61,7 @@ export default function RootLayout({
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <body className="bg-black">
         {children}
+        <Analytics />
       </body>
     </html>
   );

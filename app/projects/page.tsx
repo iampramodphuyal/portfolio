@@ -1,9 +1,16 @@
 import Link from "next/link";
 import React from "react";
+import type { Metadata } from "next";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
 import { projects } from "@/data/projects";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Systems and tools I've built — professional platforms and personal projects.",
+};
 
 export default function ProjectsPage() {
   const published = projects.filter((p) => p.published);

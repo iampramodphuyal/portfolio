@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { experience } from "@/data/experience";
 import { certifications } from "@/data/certifications";
 import { education } from "@/data/education";
+
+export const metadata: Metadata = {
+  title: "Experience",
+  description: "Work experience, certifications, and education.",
+};
 
 export default function ExperiencePage() {
   return (

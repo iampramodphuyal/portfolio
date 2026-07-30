@@ -1,8 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { blogPosts } from "@/data/blog";
 import type { BlogPost } from "@/data/blog";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Thoughts on software engineering, tools, and systems.",
+};
 
 export default function BlogPage() {
   const published = blogPosts.filter((p) => p.published);
