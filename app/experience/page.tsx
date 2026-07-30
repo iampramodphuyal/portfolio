@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { experience } from "@/data/experience";
@@ -33,9 +34,11 @@ export default function ExperiencePage() {
               <Card key={exp.company}>
                 <article className="p-4 md:p-8">
                   <div className="flex items-center gap-4 mb-4">
-                    <img
+                    <Image
                       src={exp.logo}
                       alt={exp.company}
+                      width={48}
+                      height={48}
                       className="w-12 h-12 rounded-lg object-contain bg-zinc-800 p-1"
                     />
                     <div>
@@ -65,9 +68,11 @@ export default function ExperiencePage() {
               <Card key={cert.institution}>
                 <article className="p-4 md:p-8">
                   <div className="flex items-center gap-4 mb-4">
-                    <img
+                    <Image
                       src={cert.logo}
                       alt={cert.institution}
+                      width={48}
+                      height={48}
                       className="w-12 h-12 rounded-lg object-contain bg-zinc-800 p-1"
                     />
                     <div>
@@ -96,9 +101,11 @@ export default function ExperiencePage() {
               <Card key={edu.institution}>
                 <article className="p-4 md:p-8">
                   <div className="flex items-center gap-4 mb-4">
-                    <img
+                    <Image
                       src={edu.logo}
                       alt={edu.institution}
+                      width={48}
+                      height={48}
                       className="w-12 h-12 rounded-lg object-contain bg-zinc-800 p-1"
                     />
                     <div>

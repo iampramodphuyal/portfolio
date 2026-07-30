@@ -8,6 +8,7 @@
     "build": "tsx scripts/generate-curl-config.ts && next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "tsx scripts/generate-curl-config.ts && node --import tsx --test test/*.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -23,6 +24,8 @@
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.20",
+    "eslint": "8",
+    "eslint-config-next": "14.2.28",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.23.1",
