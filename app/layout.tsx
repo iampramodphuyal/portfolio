@@ -31,6 +31,7 @@ export const metadata: Metadata = {
   icons: {
     shortcut: "/favicon.ico",
   },
+  manifest: "/manifest.json",
 };
 
 const inter = Inter({
