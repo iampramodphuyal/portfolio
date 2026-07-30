@@ -1,8 +1,12 @@
+import { site } from "./site";
+
+export type SocialIcon = "linkedin" | "mail" | "github";
+
 export type Social = {
   label: string;
   handle: string;
   href: string;
-  icon: string;
+  icon: SocialIcon;
 };
 
 export const socials: Social[] = [
@@ -14,8 +18,8 @@ export const socials: Social[] = [
   },
   {
     label: "Email",
-    handle: "pramod.phuyal@outlook.com",
-    href: "mailto:pramod.phuyal@outlook.com",
+    handle: site.email,
+    href: `mailto:${site.email}`,
     icon: "mail",
   },
   {

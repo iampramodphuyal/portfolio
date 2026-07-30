@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Particles from "./components/particles";
 import { CurlBanner } from "./components/curl-banner";
+import { site } from "@/data/site";
+import { socials } from "@/data/socials";
 
 const navigation = [
   { name: "Projects", href: "/projects" },
@@ -36,11 +38,10 @@ export default function Home() {
       <div className="hidden w-screen h-px md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <div className="my-16 text-center animate-fade-in">
         <h2 className="text-sm text-zinc-500">
-          I'm a software engineer building reliable systems and writing clean
-          code.{" "}
+          {site.description}{" "}
           <Link
             target="_blank"
-            href="https://www.linkedin.com/in/iampramodphuyal"
+            href={socials.find((s) => s.icon === "linkedin")!.href}
             className="underline duration-500 hover:text-zinc-300"
           >
             Connect with me on LinkedIn

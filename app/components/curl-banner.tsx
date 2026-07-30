@@ -2,14 +2,14 @@
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Terminal, X } from "lucide-react";
-
-const DOMAIN = "https://pramodphuyal.com.np";
+import { site } from "@/data/site";
+import { isCurlRoute } from "@/util/curl-routes";
 
 export const CurlBanner: React.FC = () => {
   const pathname = usePathname();
   const [copied, setCopied] = useState(false);
   const [dismissed, setDismissed] = useState(false);
-  const command = `curl ${DOMAIN}${pathname === "/" ? "" : pathname}`;
+  const command = `curl ${site.url}${pathname === "/" ? "" : pathname}`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(command).then(() => {
@@ -18,7 +18,7 @@ export const CurlBanner: React.FC = () => {
     });
   };
 
-  if (dismissed) return null;
+  if (dismissed || !isCurlRoute(pathname)) return null;
 
   return (
     <div className="fixed bottom-4 right-4 z-50 animate-fade-in">

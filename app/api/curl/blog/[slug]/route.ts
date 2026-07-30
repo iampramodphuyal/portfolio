@@ -1,12 +1,16 @@
 export const runtime = "nodejs";
 
 import { blogPosts } from "@/data/blog";
-
-const C_RESET = "\x1b[0m";
-const C_BOLD = "\x1b[1m";
-const C_YELLOW = "\x1b[33m";
-const C_CYAN = "\x1b[36m";
-const C_DIM = "\x1b[90m";
+import {
+  textResponse,
+  footer,
+  WIDTH,
+  C_RESET,
+  C_BOLD,
+  C_CYAN,
+  C_DIM,
+  C_YELLOW,
+} from "@/util/curl-format";
 
 export async function GET(
   _request: Request,
@@ -17,10 +21,7 @@ export async function GET(
   );
 
   if (!post) {
-    return new Response("Post not found.\n", {
-      status: 404,
-      headers: { "Content-Type": "text/plain; charset=utf-8" },
-    });
+    return textResponse("Post not found.\n", 404);
   }
 
   const date = new Intl.DateTimeFormat("en-US", {
@@ -31,17 +32,14 @@ export async function GET(
   let output = "";
 
   output += `${C_YELLOW}${C_BOLD}`;
-  output += `══════════════════════════════════════════════════\n`;
+  output += `${"═".repeat(WIDTH)}\n`;
   output += `  ${post.title}\n`;
-  output += `══════════════════════════════════════════════════${C_RESET}\n\n`;
+  output += `${"═".repeat(WIDTH)}${C_RESET}\n\n`;
   output += `${C_DIM}  ${date}${tags ? ` • ${tags}` : ""}${C_RESET}\n`;
   output += `${C_CYAN}  ${post.description}${C_RESET}\n\n`;
-  output += `${C_DIM}──────────────────────────────────────────────────${C_RESET}\n\n`;
+  output += `${C_DIM}${"─".repeat(WIDTH)}${C_RESET}\n\n`;
   output += post.plainText;
-  output += `\n\n${C_DIM}──────────────────────────────────────────────────${C_RESET}\n`;
-  output += `${C_DIM}  ← curl https://pramodphuyal.com.np/blog${C_RESET}\n`;
+  output += `\n\n${footer("/blog")}`;
 
-  return new Response(output, {
-    headers: { "Content-Type": "text/plain; charset=utf-8" },
-  });
+  return textResponse(output);
 }
