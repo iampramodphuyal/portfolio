@@ -7,6 +7,8 @@ export type Experience = {
   logo: string;
 };
 
+// TODO(pramod): add concrete numbers where they exist (networks covered,
+// records processed, clients served, SLA/uptime) — outcomes beat duties.
 export const experience: Experience[] = [
   {
     company: "Beena",
@@ -14,7 +16,7 @@ export const experience: Experience[] = [
     startDate: "Dec 2025",
     endDate: "Present",
     description:
-      "Building and scaling an AI-first automation platform, developing intelligent workflows and integrations that streamline complex business processes.",
+      "Building an AI-first automation platform and a distributed healthcare-data extraction system — per-network crawlers running across an Azure VM fleet, with an automated QA pipeline that scores every dataset before it ships.",
     logo: "/images/beena.png",
   },
   {
@@ -23,7 +25,7 @@ export const experience: Experience[] = [
     startDate: "May 2022",
     endDate: "Dec 2025",
     description:
-      "Worked as a Service Delivery Engineer, ensuring reliable data delivery pipelines and maintaining service quality for clients.",
+      "Owned end-to-end delivery of web data pipelines for enterprise clients over 3.5 years — scoping, extraction, quality assurance, and reliable delivery against agreed schedules.",
     logo: "/images/grepsr.png",
   },
   {
@@ -32,7 +34,7 @@ export const experience: Experience[] = [
     startDate: "Nov 2021",
     endDate: "May 2022",
     description:
-      "Developed and maintained backend services, APIs, and server-side logic to support web applications.",
+      "Built and maintained backend services and APIs powering production web applications.",
     logo: "/images/xelwel.png",
   },
 ];

@@ -30,32 +30,22 @@ export const projects: Project[] = [
     repository: "https://github.com/iampramodphuyal/dotfiles",
     published: true,
   },
+  // TODO(pramod): review the two drafts below — check wording and scale
+  // claims against reality, then flip published to true.
   {
-    title: "Project Three",
-    description: "Description of your third project goes here.",
-    date: "2025-01-01",
-    repository: "https://github.com/iampramodphuyal/",
+    title: "Healthcare Provider Data Platform",
+    description:
+      "Distributed scraping platform extracting healthcare-provider directory data (NPIs, specialties, locations) across US insurance payer networks. Per-network crawler monorepo orchestrated on an Azure VM fleet with pm2, feeding an automated QA pipeline before every delivery. Built at Beena (AudioBee).",
+    date: "2026-01-01",
+    proprietary: true,
     published: false,
   },
   {
-    title: "Project Four",
-    description: "Description of your fourth project goes here.",
-    date: "2025-01-01",
-    repository: "https://github.com/iampramodphuyal/",
-    published: false,
-  },
-  {
-    title: "Project Five",
-    description: "Description of your fifth project goes here.",
-    date: "2025-01-01",
-    repository: "https://github.com/iampramodphuyal/",
-    published: false,
-  },
-  {
-    title: "Project Six",
-    description: "Description of your sixth project goes here.",
-    date: "2025-01-01",
-    repository: "https://github.com/iampramodphuyal/",
+    title: "Data QA & Comparison Tooling",
+    description:
+      "Quality-assurance system for large-scale scraped datasets: run-over-run comparisons, field-level error scoring, sampling workflows, and automated verification of provider records against live directories. Surfaces regressions before they reach clients. Built at Beena (AudioBee).",
+    date: "2026-03-01",
+    proprietary: true,
     published: false,
   },
 ];

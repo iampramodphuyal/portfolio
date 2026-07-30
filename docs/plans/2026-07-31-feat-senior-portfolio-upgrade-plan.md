@@ -1,7 +1,7 @@
 ---
 title: "feat: Senior Portfolio Upgrade — fix, polish, and engineering signals"
 type: feat
-status: active
+status: completed
 date: 2026-07-31
 deepened: 2026-07-31
 brainstorm: docs/brainstorms/2026-07-31-senior-portfolio-upgrade-brainstorm.md
@@ -137,12 +137,12 @@ Scope per brainstorm: **Tier 1 (fix + polish) + Tier 2 (engineering signals)**. 
 
 ## Acceptance Criteria
 
-- [ ] `pnpm lint`, `pnpm test`, `pnpm build` pass locally and in CI; CI badge in README
-- [ ] `curl -A curl localhost:3000/{,projects,experience,blog,contact}` return ANSI text with **correctly aligned banner boxes**; homepage card says "Software Engineer"; `curl -A curl localhost:3000/nonexistent` → plain-text 404 (sanitized echo); `curl -I -A curl localhost:3000/` → 200
-- [ ] Browser pages unchanged visually except: no broken image on /experience, working divider glow on `/`, terminal 404, resume link, banner hidden on non-curl routes
-- [ ] `/opengraph-image` renders; `/sitemap.xml` = 5 static pages + published posts (no `/api/curl/*`); `/robots.txt` from `app/robots.ts` with `Disallow: /api/`; distinct `<title>` per page; `/manifest.json` names the real site; security headers present on page responses
-- [ ] Single source: `rg "pramod.phuyal@outlook|Software Developer|pramodphuyal\.com\.np" --glob '!data/**' --glob '!README.md' --glob '!docs/**'` finds no hardcoded copies in app/util/scripts/public-shell code (generated config.sh is gitignored)
-- [ ] README non-empty; zero placeholder text in `data/`; proprietary entries render without dead links in both modes; **projects page shows 4 published projects only after user reviews drafts and flips `published`** (tests assert against currently-published data, so they stay green either way)
+- [x] `pnpm lint`, `pnpm test`, `pnpm build` pass locally (CI run pending first push); CI badge in README
+- [x] `curl -A curl localhost:3000/{,projects,experience,blog,contact}` return ANSI text with **correctly aligned banner boxes**; homepage card says "Software Engineer"; `curl -A curl localhost:3000/nonexistent` → plain-text 404 (sanitized echo); `curl -I -A curl localhost:3000/` → 200
+- [x] Browser pages unchanged visually except: no broken image path pending user asset (beena.png), dead `animate-glow` class removed (upstream chronark never defined it either — keyframe would have overridden fade-left, so deletion, not definition), terminal 404, resume link, banner hidden on non-curl routes
+- [x] `/opengraph-image` renders; `/sitemap.xml` = 5 static pages + published posts (no `/api/curl/*`); `/robots.txt` from `app/robots.ts` with `Disallow: /api/`; distinct `<title>` per page; `/manifest.json` names the real site; security headers present on page responses
+- [x] Single source: `rg "pramod.phuyal@outlook|Software Developer|pramodphuyal\.com\.np" --glob '!data/**' --glob '!README.md' --glob '!docs/**'` finds no hardcoded copies in app/util/scripts/public-shell code (generated config.sh is gitignored)
+- [x] README non-empty; zero placeholder text in `data/`; proprietary entries render without dead links in both modes; **projects page shows 4 published projects only after user reviews drafts and flips `published`** (tests assert against currently-published data, so they stay green either way)
 - [ ] All drafted content (projects, experience, title) reviewed/edited by user before `published: true` / merge
 - [ ] Vercel Analytics shows browser pageviews after deploy
 
