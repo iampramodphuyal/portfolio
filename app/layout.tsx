@@ -1,5 +1,4 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
@@ -42,14 +41,19 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 };
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const jetbrains = LocalFont({
+  src: [
+    { path: "./fonts/JetBrainsMonoNerdFont-Regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/JetBrainsMonoNerdFont-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-jetbrains",
+  display: "swap",
 });
 
 const calSans = LocalFont({
   src: "../public/fonts/CalSans-SemiBold.ttf",
   variable: "--font-calsans",
+  display: "swap",
 });
 
 export default function RootLayout({
@@ -58,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
+    <html lang="en" className={[jetbrains.variable, calSans.variable].join(" ")}>
       <body className="bg-black">
         {children}
         <Analytics />

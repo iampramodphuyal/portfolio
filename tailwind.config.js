@@ -6,8 +6,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
-        display: ["var(--font-calsans)"],
+        sans: ["var(--font-jetbrains)", ...defaultTheme.fontFamily.mono],
+        mono: ["var(--font-jetbrains)", ...defaultTheme.fontFamily.mono],
+        display: ["var(--font-jetbrains)"],
+        calsans: ["var(--font-calsans)"],
       },
       backgroundImage: {
         "gradient-radial":
