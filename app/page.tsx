@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Particles from "./components/particles";
 import { CurlBanner } from "./components/curl-banner";
+import { Greeting } from "./components/greeting";
 import { site } from "@/data/site";
 import { socials } from "@/data/socials";
 
@@ -48,6 +49,7 @@ export default function Home() {
           </Link>
           .
         </h2>
+        <Greeting />
       </div>
       <CurlBanner />
       <p className="absolute bottom-10 text-xs text-zinc-700 animate-fade-in">
