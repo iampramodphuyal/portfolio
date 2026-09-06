@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "app/api/curl/route.ts": {
-      "includeFiles": "card.sh,public/curl/**"
-    }
-  }
-}

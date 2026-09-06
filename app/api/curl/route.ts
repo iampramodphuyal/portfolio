@@ -54,18 +54,7 @@ export async function GET(request: Request) {
       },
     });
   } catch (error) {
-    // ponytail: temporary — surfacing the real error to diagnose a
-    // production-only 500 that doesn't reproduce locally. Revert once found.
-    const details =
-      error && typeof error === "object"
-        ? {
-            message: "message" in error ? String(error.message) : undefined,
-            stdout: "stdout" in error ? String((error as any).stdout) : undefined,
-            stderr: "stderr" in error ? String((error as any).stderr) : undefined,
-            status: "status" in error ? (error as any).status : undefined,
-          }
-        : String(error);
-    return new Response(`Error generating terminal output\n${JSON.stringify(details, null, 2)}\n`, {
+    return new Response("Error generating terminal output\n", {
       status: 500,
       headers: { "Content-Type": "text/plain; charset=utf-8" },
     });
