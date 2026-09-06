@@ -36,7 +36,15 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    shortcut: "/favicon.ico",
+    icon: [
+      { url: "/favicon-pp.svg", type: "image/svg+xml", media: "(prefers-color-scheme: dark)" },
+      { url: "/favicon-pp-light.svg", type: "image/svg+xml", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon-pp-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-pp-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-pp-64.png", sizes: "64x64", type: "image/png" },
+      { url: "/favicon-pp-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon-pp.png", sizes: "180x180", type: "image/png" }],
   },
   manifest: "/manifest.json",
 };

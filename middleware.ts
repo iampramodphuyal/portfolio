@@ -42,6 +42,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   // Skip API routes, Next internals, the OG image (no dot in its path —
   // must be named), and anything file-like (covers robots.txt, sitemap.xml,
-  // manifest.json, favicon.ico, /resume.pdf, fonts, images).
+  // manifest.json, favicon-pp.svg, /resume.pdf, fonts, images).
   matcher: ["/((?!api|_next|opengraph-image|.*\\..*).*)"],
 };
