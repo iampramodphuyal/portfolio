@@ -34,7 +34,7 @@ async function assertPlainText(res: Response, marker: string) {
 }
 
 test("GET /api/curl renders the bash card", async () => {
-  const res = await getCard();
+  const res = await getCard(url("/"));
   await assertPlainText(res, site.title);
 });
 

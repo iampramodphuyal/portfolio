@@ -3,79 +3,10 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
-
-type GeoInfo = {
-  city: string | null;
-  country: string | null;
-  timezone: string | null;
-  isp: string | null;
-  weather: { tempC: number; condition: string } | null;
-  sample: boolean;
-};
+import type { GeoInfo } from "@/util/geo";
+import { timezoneAbbr, sentenceCase, timeFragment } from "@/util/greeting-copy";
 
 type Signals = Record<string, string | number | null>;
-
-// The witty third line — always a lowercase-first fragment so it reads
-// naturally after either "Somewhere in {city}, " or on its own, capitalized.
-function timeFragment(hour: number): { emoji: string; text: string } {
-  if (hour < 5) return { emoji: "🌙", text: "it's either an early start or a very late one" };
-  if (hour < 8) return { emoji: "☕️", text: "coffee is probably still brewing" };
-  if (hour < 12) return { emoji: "🌤️", text: "the day is just getting going" };
-  if (hour < 14) return { emoji: "🥪", text: "hopefully lunch happened" };
-  if (hour < 18) return { emoji: "💻", text: "the afternoon's holding up" };
-  if (hour < 22) return { emoji: "🌆", text: "the evening's just getting started" };
-  return { emoji: "🌃", text: "the commits at this hour hit different" };
-}
-
-function sentenceCase(s: string): string {
-  return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
-}
-
-// ponytail: only the common zones get a recognizable short code — the
-// long tail of ~400 IANA zones has no standardized abbreviation anyway.
-// Falls back to Intl's own short name (e.g. "PDT") or a GMT offset.
-const TZ_ABBREVIATIONS: Record<string, string> = {
-  "America/New_York": "ET",
-  "America/Chicago": "CT",
-  "America/Denver": "MT",
-  "America/Los_Angeles": "PT",
-  "America/Anchorage": "AKT",
-  "Pacific/Honolulu": "HST",
-  "America/Sao_Paulo": "BRT",
-  "America/Mexico_City": "CT",
-  "Europe/London": "GMT",
-  "Europe/Paris": "CET",
-  "Europe/Berlin": "CET",
-  "Europe/Madrid": "CET",
-  "Europe/Rome": "CET",
-  "Europe/Moscow": "MSK",
-  "Africa/Cairo": "EET",
-  "Africa/Johannesburg": "SAST",
-  "Asia/Dubai": "GST",
-  "Asia/Karachi": "PKT",
-  "Asia/Kolkata": "IST",
-  "Asia/Kathmandu": "NPT",
-  "Asia/Katmandu": "NPT", // ICU/CLDR can resolve to this older alias spelling
-  "Asia/Dhaka": "BDT",
-  "Asia/Shanghai": "CST",
-  "Asia/Hong_Kong": "HKT",
-  "Asia/Singapore": "SGT",
-  "Asia/Tokyo": "JST",
-  "Asia/Seoul": "KST",
-  "Australia/Sydney": "AET",
-  "Australia/Perth": "AWT",
-  "Pacific/Auckland": "NZT",
-};
-
-function timezoneAbbr(now: Date): string | undefined {
-  const zone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  return (
-    TZ_ABBREVIATIONS[zone] ??
-    new Intl.DateTimeFormat("en-US", { timeZoneName: "short" })
-      .formatToParts(now)
-      .find((p) => p.type === "timeZoneName")?.value
-  );
-}
 
 function collectSignals(): Signals {
   let gpu: string | null = null;
@@ -144,7 +75,7 @@ export function Greeting() {
 
   if (!now) return null;
 
-  const tzAbbr = timezoneAbbr(now);
+  const tzAbbr = timezoneAbbr(Intl.DateTimeFormat().resolvedOptions().timeZone, now);
   const time = now.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false });
 
   const header = geo?.city ? `👋 Hey, ${geo.city}!` : "👋 Hey there!";
