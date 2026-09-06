@@ -3,8 +3,7 @@
 # This files contains info about my social networks
 #
 
-SCRIPT_DIR="/var/task/public/curl"
-# SCRIPT_DIR="public/curl"
+SCRIPT_DIR="${SCRIPT_DIR:-/var/task/public/curl}"
 
 source "$SCRIPT_DIR/config.sh"
 source "$SCRIPT_DIR/box.sh" 

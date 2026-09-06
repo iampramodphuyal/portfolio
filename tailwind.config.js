@@ -1,14 +1,50 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./pages/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
-    darkMode: "class",
-    theme: {
-        extend: {
-            colors: {
-                customDark: "#11111b",
-                customLight: "#dce0e8",
-            },
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./data/**/*.tsx"],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-jetbrains)", ...defaultTheme.fontFamily.mono],
+        mono: ["var(--font-jetbrains)", ...defaultTheme.fontFamily.mono],
+        display: ["var(--font-jetbrains)"],
+        calsans: ["var(--font-calsans)"],
+      },
+      backgroundImage: {
+        "gradient-radial":
+          "radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))",
+      },
+      animation: {
+        "fade-in": "fade-in 3s ease-in-out forwards",
+        title: "title 3s ease-out forwards",
+        "fade-left": "fade-left 3s ease-in-out forwards",
+        "fade-right": "fade-right 3s ease-in-out forwards",
+      },
+      keyframes: {
+        "fade-in": {
+          "0%": { opacity: "0%" },
+          "75%": { opacity: "0%" },
+          "100%": { opacity: "100%" },
         },
+        "fade-left": {
+          "0%": { transform: "translateX(100%)", opacity: "0%" },
+          "30%": { transform: "translateX(0%)", opacity: "100%" },
+          "100%": { opacity: "0%" },
+        },
+        "fade-right": {
+          "0%": { transform: "translateX(-100%)", opacity: "0%" },
+          "30%": { transform: "translateX(0%)", opacity: "100%" },
+          "100%": { opacity: "0%" },
+        },
+        title: {
+          "0%": { "line-height": "0%", "letter-spacing": "0.25em", opacity: "0" },
+          "25%": { "line-height": "0%", opacity: "0%" },
+          "80%": { opacity: "100%" },
+          "100%": { "line-height": "100%", opacity: "100%" },
+        },
+      },
     },
-    plugins: [require("flowbite/plugin")],
+  },
+  plugins: [],
 };

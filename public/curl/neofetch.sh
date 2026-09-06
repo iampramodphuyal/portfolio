@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 
-SCRIPT_DIR="/var/task/public/curl"
-# SCRIPT_DIR="public/curl"
+SCRIPT_DIR="${SCRIPT_DIR:-/var/task/public/curl}"
 
 source "$SCRIPT_DIR/config.sh"
 
